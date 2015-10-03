@@ -1,0 +1,39 @@
+.container {
+	background: white;
+	position: relative;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+.content {
+	@extend .clearfix;
+	max-width: rem(1320px);
+	padding: 0 rem(20px);
+	margin: rem(40px) auto;
+
+	@include query-below($hand) {
+		margin: rem(20px) auto;
+	}
+
+	@include query-above($lap) {
+		margin: rem(60px) auto;
+		padding: 0 rem(40px);
+	}
+
+	@include query-above($desk) {
+		margin: rem(100px) auto;
+		padding: 0 rem(60px);
+	}
+}
+
+.content--portfolio {
+	max-width: rem(1620px);
+}
+
+.content--single {
+	max-width: rem(820px);
+}
+
+.content--full {
+	max-width: none;
+}

@@ -1,0 +1,158 @@
+/**
+ * Fluid images for responsive purposes.
+ * Offset `alt` text from surrounding copy.
+ */
+img {
+    max-width: 100%;
+    height: auto;
+    font-style: italic;
+}
+
+/* Google Maps breaks if `max-width: 100%` acts upon it; use their selector */
+.gm-style img {
+	max-width: none;
+}
+
+.aligncenter,
+.alignnone,
+.alignleft,
+.alignright {
+	display: block;
+	transform: translateY(0.821rem);
+
+	p & {
+		transform: translateY(0.4105rem);
+	}
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft, .alignright {
+	margin-top: rhythm(1);
+	margin-bottom: rhythm(1);
+	max-width: 50%;
+
+	p + & {
+		margin-top: 0;
+	}
+
+	p > &:first-child,
+	p > :first-child > &:first-child {
+		margin-top: 0;
+	}
+}
+
+.alignleft {
+	float: left;
+	margin-right: rhythm(2);
+}
+
+.alignright {
+	float: right;
+	margin-left: rhythm(2);
+}
+
+figure {
+	max-width: 100%;
+
+	img {
+		display: block;
+	}
+}
+
+
+// Captions
+figcaption {
+	// font-style: italic;
+}
+
+.wp-caption, .wp-caption-text, .gallery-caption {
+//	@extend %default-baseline-font;
+	font-size: rem(13px);
+	transform: none;
+	margin-top: rem(10px);
+	margin-bottom: rem(20px);
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.gallery {
+	@extend .clearfix;
+	font-size: 0;
+
+	.gallery-item {
+		margin-bottom: 0;
+		display: inline-block;
+		vertical-align: top;
+
+		border: 0 solid transparent;
+
+		border-top-width: rem(60px);
+		border-left-width: rem(60px);
+
+		font-size: rem(14px);
+		text-align: center;
+
+	}
+
+	img {
+		margin: 0 auto;
+	}
+
+	a {
+		border: 0;
+		display: block;
+	}
+}
+
+.gallery .gallery-item {
+	width: 100%;
+}
+
+@for $i from 1 to 10 {
+	.gallery-columns-#{$i} .gallery-item {
+		width: percentage(1/$i);
+	}
+}
+
+.gallery.gallery {
+	margin-top: rem(-20px);
+	margin-bottom: rem(20px);
+	margin-left: rem(-20px);
+
+	@include query-above($lap) {
+		margin-top: rem(-40px);
+		margin-bottom: rem(40px);
+		margin-left: rem(-40px);
+	}
+	@include query-above($desk) {
+		margin-top: rem(-60px);
+		margin-bottom: rem(60px);
+		margin-left: rem(-60px);
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.gallery .gallery-item.gallery-item {
+	border-top-width: rem(20px);
+	border-left-width: rem(20px);
+
+	@include query-above($lap) {
+		border-top-width: rem(40px);
+		border-left-width: rem(40px);
+	}
+	@include query-above($desk) {
+		border-top-width: rem(60px);
+		border-left-width: rem(60px);
+	}
+}
+
+.pixcode--grid + .gallery.gallery {
+	margin-top: 0;
+}

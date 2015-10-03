@@ -1,0 +1,41 @@
+hr {
+	margin: rem(60px) auto;
+	border: 0;
+	border-top: 1px solid $lightest;
+}
+
+.separator {
+	position: relative;
+	text-align: center;
+	margin: rem(60px) auto;
+
+	.pile__item:first-child > &:first-child {
+		margin-top: 0;
+	}
+
+	.pile__item:last-child > &:last-child {
+		margin-bottom: 0;
+	}
+
+	> * {
+		@extend .h5;
+		@extend .separator__text;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 50%; left: 0;
+		width: 100%;
+		border-top: 1px solid $lightest;
+	}
+}
+
+.separator__text {
+	display: inline-block;
+	background: white;
+	padding: 0 rem(60px);
+	margin-bottom: 0;
+	position: relative;
+	z-index: 10;
+}

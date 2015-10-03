@@ -1,0 +1,99 @@
+// Homepage selected projects component
+
+.masonry {
+	@extend .grid;
+	@extend .grid--small;
+
+	transition: height .3s ease-in-out;
+
+	.masonry__item.masonry__item {
+		@include query-below($lap) {
+			margin-bottom: 0;
+		}
+	}
+
+	.masonry__item a{
+		display: block;
+	}
+}
+
+.masonry__item {
+	@extend .grid__item;
+
+	margin-bottom: rem(50px);
+	width: 100%;
+	text-align: center;
+	transform: translateZ(0);
+
+	@include query-above(480px) {
+		width: 50%;
+	}
+
+	@include query-above($lap) {
+		width: 33.33%;
+	}
+}
+
+// project columns option
+$config: (
+		small: 	1 2 3,
+		medium: ($lap, 1 2 3 4 5),
+		large: 	($desk, 1 2 3 4 5 6)
+);
+
+@each $breakpoint, $list in $config {
+	@if $breakpoint == small {
+		@each $columns in $list {
+			.masonry-#{$breakpoint}-col-#{$columns} > .masonry__item {
+				width: percentage(0.9999/$columns);
+			}
+		}
+	} @else {
+		@include query-above(nth($list, 1)) {
+			@each $columns in nth($list, 2) {
+				.masonry-#{$breakpoint}-col-#{$columns} > .masonry__item {
+					width: percentage(0.9999/$columns);
+				}
+			}
+		}
+	}
+}
+
+.masonry__item-image {
+	position: relative;
+	display: block;
+	margin-bottom: rem(30px);;
+
+	img {
+		display: block;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto
+	}
+}
+
+.masonry__item-title {
+	margin-bottom: 0;
+}
+
+.masonry__item-meta {
+	* {
+		font-size: rem(13px);
+		font-style: italic;
+		font-family: "Georgia", serif;
+	}
+
+	li {
+		&:after {
+			content: ",";
+		}
+
+		&:last-child:after {
+			content: none;
+		}
+	}
+
+	&, a {
+		color: $gray;
+	}
+}

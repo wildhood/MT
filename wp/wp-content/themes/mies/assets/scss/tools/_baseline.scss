@@ -1,0 +1,90 @@
+$base-font-size: 	16px 	!default;
+$base-line-height: 	1.5 	!default;
+$baseline-scale:    2 		!default;
+$cap-height: 		0.68	!default;
+
+
+@mixin baseline($font-size, $unit: 'rem', $base-font-size: $base-font-size, $base-line-height: $base-line-height) {
+
+	@if (unit($base-line-height) == px) {
+		$base-line-height: $base-line-height / $base-font-size;
+	}
+
+	$baseline-rhythm: $base-font-size * $base-line-height / $baseline-scale;
+
+	// number of rhythm units that can fit the font-size
+	$lines: ceil(($font-size + 0.001px) / $baseline-rhythm);
+
+	// calculate the new line-height
+	$line-height: $baseline-rhythm * $lines / $font-size + 0.001 !global;
+
+	$baseline-distance: ($line-height - $cap-height) / 2;
+	$offset-top: $baseline-distance * $font-size % $baseline-rhythm;
+
+	// METHOD 1
+	/////////////////
+
+	// this method can relatively move down elements you may not want to
+	// position: $offset-top;
+	// top: $baseline-distance + em;
+
+
+
+	// METHOD 2
+	/////////////////
+
+	// if you use this mixin only on elements that have one direction margins
+	// http://csswizardry.com/2012/06/single-direction-margin-declarations/
+	// you can use this method with no worries.
+	// this method assumes the direction is down and the margin is $base-line-height
+	// padding-top: $offset-top / $font-size + em;
+	// padding-bottom: ($baseline-rhythm - $offset-top) / $font-size + em;
+
+	// METHOD 3
+	/////////////////
+	@if ($unit == 'rem') {
+		font-size: $font-size * 1rem / $base-font-size;
+		transform: translateY($offset-top * 1rem / $font-size);
+	}
+
+	@if ($unit == 'px') {
+		font-size: $font-size;
+		transform: translateY($offset-top);
+	}
+
+	line-height: $line-height;
+}
+
+@mixin line-height($font-size, $unit: 'rem', $base-font-size: $base-font-size, $base-line-height: $base-line-height) {
+
+	@if (unit($base-line-height) == px) {
+		$base-line-height: $base-line-height / $base-font-size;
+	}
+
+	$baseline-rhythm: $base-font-size * $base-line-height / $baseline-scale;
+
+	// number of rhythm units that can fit the font-size
+	$lines: ceil(($font-size + 0.001px) / $baseline-rhythm);
+
+	// calculate the new line-height
+	$line-height: $baseline-rhythm * $lines / $font-size + 0.001 !global;
+
+	line-height: $line-height;
+}
+
+@function rhythm($units) {
+	@return $units * $base-line-height + rem;
+}
+
+@mixin rhythm($property, $units, $convert-to-ems: $base-font-size, $base-line-height: $base-line-height) {
+
+	$baseline-rhythm:   $base-line-height / $baseline-scale;
+
+	// if use-ems is
+	@if ($convert-to-ems == false) {
+		#{$property}: $units * $baseline-rhythm;
+	} @else {
+		#{$property}: $units * $baseline-rhythm / $convert-to-ems + em;
+	}
+
+}

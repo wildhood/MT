@@ -1,0 +1,77 @@
+.form-connected {
+	font-size: rem(15px);
+
+	input, textarea {
+		width: 100%;
+		padding: rem(20px);
+
+		outline: none;
+
+		font-weight: 300;
+	}
+
+	.grid {
+		margin-top: 0;
+	}
+
+	.grid__item {
+		margin-top: 0;
+	}
+
+	.wpcf7-not-valid-tip{
+		position: absolute;
+		left: rem(20px);
+		bottom: 0;
+
+		color: $dark;
+		font-size: rem(11px);
+	}
+
+	& + p{
+		text-align: right;
+
+		img{
+			float: left;
+		}
+	}
+
+	.wpcf7-form-control-wrap + br {
+		display: none;
+	}
+
+	.wpcf7-form-control-wrap {
+		display: block;
+	}
+
+	@include query-below($lap) {
+		input {
+			border-bottom: 0;
+		}
+	}
+
+	@include query-above($lap) {
+		.grid {
+			margin-left: 0;
+		}
+
+		.grid__item {
+			padding-left: 0;
+
+			&:first-child input {
+				border-right: 0;
+			}
+		}
+
+		input {
+			border-bottom: 0;
+		}
+	}
+}
+
+.wpcf7-submit {
+	@extend %btn--submit;
+}
+
+div.wpcf7-validation-errors {
+	border: 1px solid $dark !important;
+}

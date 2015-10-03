@@ -1,0 +1,149 @@
+@import "settings";
+@import "trumps/clearfix";
+@import "tools/baseline";
+@import "tools/mixins";
+
+%alpha {
+	font-family: "Lato", sans-serif;
+	font-weight: normal;
+	-webkit-font-smoothing: auto;
+}
+
+%beta {
+	font-family: "Open Sans", sans-serif;
+}
+
+%btn {
+	padding: $u/2 30px;
+
+	font-size: 12px;
+	line-height: 1;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+
+	border: 0;
+	border-radius: 40px;
+
+	background: $dark;
+	color: white;
+
+	background-image: none;
+	box-shadow: none;
+
+	outline: none;
+
+	transition: all 0.2s ease;
+
+	text-shadow: none !important;
+
+	&:hover {
+		background: $gray;
+		color: white;
+	}
+
+	&.a{
+		border-bottom: none;
+	}
+}
+
+
+@import "woocommerce/archive";
+@import "woocommerce/single";
+@import "woocommerce/cart";
+
+
+
+.woocommerce, .woocommerce-page{
+
+	.woocommerce-message, .woocommerce-info, .woocommerce-error{
+		margin-top: $u !important;
+		padding-left: 1em !important;
+
+		border: none;
+		border: 1px solid $borders;
+
+		background: none;
+
+		border-radius: 0;
+		box-shadow: none;
+
+		&:before{
+			content: none;
+		}
+
+		.button{
+			&:after{
+				content: none;
+			}
+		}
+	}
+
+	.woocommerce-message {
+		top: 20px;
+		margin: 0 !important;
+	}
+
+	.woocommerce-error{
+		border: 1px solid red;
+	}
+
+	input.button {
+		text-shadow: none !important;
+	}
+}
+
+.woocommerce input.button,
+.woocommerce button.button,
+.woocommerce a.button {
+	@extend %btn;
+
+	&:hover {
+		@extend %btn;
+	}
+}
+
+.woocommerce #content table.cart img,
+.woocommerce table.cart img,
+.woocommerce-page #content table.cart img,
+.woocommerce-page table.cart img {
+	width: auto;
+}
+
+#ship-to-different-address *{
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+ul.payment_methods{
+
+	li *{
+		display: inline-block;
+	}
+}
+
+.woocommerce-page #payment div.payment_box{
+	background: transparent;
+	border: 1px solid $borders;
+	box-shadow: none;
+
+	&:after{
+		content: none;
+	}
+}
+
+.order_details .total .amount{
+	color: $dark;
+}
+
+.woocommerce .filter__tags {
+	position: static;
+
+	text-align: center;
+}
+
+
+.woocommerce.woocommerce-page .comment-form {
+	margin-top: 0 !important;
+}

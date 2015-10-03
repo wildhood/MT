@@ -1,0 +1,124 @@
+.woocommerce div.product span.price{
+    @extend %beta;
+    font-size: 15px;
+    color: $dark;
+    font-style: italic;
+
+    ins{
+        border-bottom: none;
+    }
+
+    del{
+        font-size: 13px;
+        color: $dark;
+    }
+
+    ins, del {
+        display: inline-block;
+    }
+}
+
+.shop-categories{
+    @extend %beta;
+    margin: 2*$u;
+
+    font-size: 16px;
+    font-style: italic;
+    text-transform: none;
+    text-align: center;
+    letter-spacing: 0;
+
+    a.active{
+        color: $dark;
+    }
+}
+
+.product__badge{
+    @extend %alpha;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 130px;
+    height: 65px;
+
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+
+    z-index: 10;
+
+    transform: rotate(-45deg)  translateY(-25px);
+    transform-origin: bottom center;
+    transition: all .2s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+    &:before{
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        content: "";
+
+        width: 0;
+        height: 0;
+        border-left: 65px solid transparent;
+        border-right: 65px solid transparent;
+
+        border-bottom: 65px solid $gray;
+    }
+
+    &:after{
+        font-family: "Lato", sans-serif;
+
+        content: attr(data-content);
+
+        position: absolute;
+        bottom: $u/4;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        z-index: 250;
+    }
+
+    .pile-item--product:hover &{
+        transform: rotate(-45deg) translateY(0);
+    }
+}
+
+.product-archive-pagination ul{
+    @extend %beta;
+
+    margin: 2*$u 0;
+    display: block;
+
+    font-size: 0;
+    font-style: italic;
+    text-transform: none;
+    text-align: center;
+    list-style-type: none;
+
+    li{
+        font-size: 16px;
+        display: inline-block;
+
+        border: 1px solid $borders;
+        border-right: 0;
+    }
+
+    li:last-child{
+        border-right: 1px solid $borders;
+    }
+
+    a,span{
+        padding: $u/2;
+    }
+}
+
+.masonry__item-meta {
+    ins span.amount{
+        font-size: 15px;
+    }
+}

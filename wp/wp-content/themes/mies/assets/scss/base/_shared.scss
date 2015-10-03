@@ -1,0 +1,22 @@
+@function rem($px) {
+	@return $px * 1rem / $font-size;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+ul, ol, dl,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre,
+%margin-bottom {
+	margin-bottom: rem(40px);
+
+	@include query-below($hand) {
+		margin-bottom: rem(20px);
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

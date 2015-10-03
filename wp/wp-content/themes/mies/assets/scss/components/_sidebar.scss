@@ -1,0 +1,120 @@
+//*------------------------------------*\
+//   $SIDEBAR LAYOUT
+//*------------------------------------*/
+
+$sidebar-width: 350px;
+
+.has_sidebar {
+	
+	.content--single-post {
+		max-width: rem(1200px);
+	}
+
+	.post-sidebar-wrapper {
+		@extend %clearfix;
+		position: relative;
+	}
+
+	.sidebar--single-post {
+		position: relative;
+		padding-top: rem(20px);
+		padding-bottom: rem(20px);
+	}
+
+	@include query-above($lap) {
+
+		.sidebar-helper {
+			float: left;
+			margin-right: -30%;
+			width: 100%;
+
+			.rtl & {
+				float: right;
+				margin-right: 0;
+				margin-left: -30%;
+			}
+		}
+
+		.post-content-wrapper {
+			margin-right: 30%;
+			padding-right: rem(40px);
+
+			&:before {
+				content: "";
+
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 30%;
+				border-right: 1px solid $borders;
+			}
+
+			.rtl & {
+				margin-right: 0;
+				margin-left: 30%;
+				padding-right: 0;
+				padding-left: rem(40px);
+
+				&:before {
+					right: auto;
+					left: 30%;
+				}
+			}
+		}
+
+		.sidebar--single-post {
+			z-index: 5;
+			float: right;
+			width: 30%;
+			padding-left: rem(40px);
+
+			.rtl & {
+				float: left;
+				padding-left: 0;
+				padding-right: rem(40px);
+			}
+		}
+	}
+
+	@include query-above($desk) {
+
+		.sidebar-helper {
+			margin-right: rem(-$sidebar-width);
+
+			.rtl & {
+				margin-right: 0;
+			}
+		}
+
+		.post-content-wrapper {
+			margin-right: rem($sidebar-width);
+			padding-right: rem(60px);
+
+			&:before {
+				right: rem($sidebar-width);
+			}
+
+			.rtl & {
+				margin-right: 0;
+				padding-right: 0;
+				margin-left: rem($sidebar-width);
+				padding-left: rem(60px);
+
+				&:before {
+					right: auto;
+					left: rem($sidebar-width);
+				}
+			}
+		}
+
+		.sidebar--single-post {
+			width: rem($sidebar-width);
+			padding-left: rem(60px);
+
+			.rtl & {
+				padding-left: 0;
+				padding-right: rem(60px);
+			}
+		}
+	}
+}

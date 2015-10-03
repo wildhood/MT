@@ -1,0 +1,493 @@
+.comments-area-title, .comment-reply-title {
+	@extend %clearfix;
+
+	.comments-title, a {
+		display: inline-block;
+	}
+
+	.comments-title {
+		margin: 0;
+		margin-right: $u/4;
+
+		@include query-below($lap) {
+			font-size: rem(21px);
+		}
+	}
+}
+
+
+.commentlist li.comment, .commentlist li.pingback, .commentlist li.trackback {
+	@include query-above($lap) { 
+		padding-left: rem(50px);
+	}
+
+	.has--avatars & {
+		@include query-above($lap) {
+			padding-left: rem(90px);
+		}
+
+		@include query-below($lap) {
+			.media__body {
+				padding-left: rem(70px);
+			}
+		}
+	}
+}
+
+.comments_add-comment {
+	@extend %alpha;
+
+	margin-bottom: 2px;
+	vertical-align: bottom;
+
+	font-size: rem(12px);
+	text-transform: uppercase;
+	font-weight: 700;
+	color: $light;
+}
+
+.commentlist {
+	position: relative;
+
+	list-style: none;
+	list-style-type: none;
+
+	margin: 0;
+	border-left: 0;
+	padding-left: 0;
+
+	counter-reset: my-badass-counter;
+
+	> li header{
+
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 0;
+
+
+			content: counter(my-badass-counter) '. ';
+			counter-increment: my-badass-counter;
+			margin-right: 5px;
+		}
+	}
+
+	.has--avatars &{
+		&:before {
+			content: "";
+
+			position: absolute;
+			left: rem(29px);
+			top: 0;
+			bottom: rem(-15px);
+
+			border-left: 1px solid $borders;
+		}
+
+		&:after {
+			content: "";
+
+			position: absolute;
+			bottom: rem(-15px);
+			left: rem(29px);
+			height: 1px;
+			right: 0;
+
+			background: linear-gradient(to right, rgba(215, 215, 215, 1) 0%,rgba(0,0,0,0.01) 30%);
+		}
+
+		> li header:before{
+			content: none;
+		}
+	}
+
+}
+
+li.comment, li.pingback, li.trackback {
+	position: relative;
+
+	display: block;
+	margin-bottom: 0;
+	margin-top: rem(50px);
+	margin-bottom: rem(50px);
+
+	.comment-number {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+
+		@include query-below($lap) {
+			left: rem(-60px);
+		}
+	}
+
+	.children {
+		position: relative;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: $u;
+
+		@include query-below($lap){
+			margin-left: 0;
+		}
+
+		.has--avatars &{
+			li {
+				@include query-above($lap) {
+
+					&:before {
+						content: "";
+						position: absolute;
+						top: rem(30px);
+						border-top: 1px solid $borders;
+					}
+				}
+
+				.comment-number {
+					border: 1px solid $borders;
+					background: $borders;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+@include query-above($lap) {
+	@for $i from 2 through 10 {
+		li.depth-#{$i}:before {
+			left: rem(- ($i - 1) * 90px + 29px);
+			width: rem( ($i - 1) * 90px + 29px);
+		}
+	}
+}
+
+.comment__meta{
+	margin-bottom: rem(12px);
+}
+
+.comment__author-name {
+	font-size: rem(15px);
+	margin-right: 5px;
+
+	a{
+		color: black;
+	}
+}
+
+.comment-article {
+	margin-bottom: 0;
+
+	&:hover {
+		.comment-edit-link, .comment-reply-link {
+			opacity: 1;
+		}
+	}
+}
+
+.comment__avatar {
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	margin-right: rem(12px);
+
+	img {
+		width: rem(60px);
+		border-radius: 50%;
+		height: auto;
+	}
+
+	&:empty{
+		display: none;
+	}
+}
+
+
+.comment__time {
+	margin-right: rem(20px);
+
+	a {
+		font-size: rem(13px);
+		color: $gray;
+	}
+}
+
+.comment__content {
+	position: relative;
+
+	margin-bottom: rem(20px);
+	font-size: rem(14px);
+	color: #8c888c;
+}
+
+.comment__links {
+	display: inline-block;
+	font-size: rem(14px);
+	a {
+		border-bottom: 1px solid $gray;
+	}
+}
+
+.comment-edit-link, .comment-reply-link {
+	color: $gray;
+	opacity: 0;
+	margin-right: rem(20px);
+	transition: opacity .15s ease-in-out;
+	transform: translateZ(0);
+
+	@include query-below($lap) {
+		opacity: 1;
+	}
+}
+
+.comment-reply-link {
+	color: $light;
+}
+
+.comment-form p.logged-in-as {
+	// @include rhythm(margin-left, 3);
+	margin-bottom: rem(20px);
+}
+
+.comment-reply-title {
+
+	margin-top: 0;
+	margin-bottom: $u;
+
+	font-size: rem(28px);
+	transform: none;
+
+	@include query-below($lap) {
+		font-size: 21px;
+	}
+
+	a {
+		margin-top: -7px;
+	}
+}
+
+.comment-respond {
+	position: relative;
+	margin-bottom: rem(20px);
+
+	@include query-above($lap) {
+
+		.comment & {
+			padding-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	.comment & {
+		margin-left: rem(20px);
+	}
+}
+
+#cancel-comment-reply-link {
+	text-decoration: underline;
+}
+
+
+
+
+
+/* Comments Form */
+
+.comment-form {
+	@extend .grid;
+	@extend .grid--small;
+	@extend %clearfix;
+	margin-top: 0;
+
+	.comment & {
+		padding-left: 0;
+	}
+
+	input, textarea {
+		width: 100%;
+		padding: rem(20px);
+
+		outline: none;
+
+		font-weight: 300;
+
+		border: 1px solid $borders;
+	}
+
+	p{
+		@extend .grid__item;
+		margin-bottom: 0;
+
+		@include query-below($lap) {
+			margin-top: 0 !important;
+		}
+	}
+
+	// for jetpack comments
+	iframe{
+		padding-left: 1.5*$u;
+	}
+
+	@include query-above($lap){
+		& > .comment-subscription-form{
+			width: 70%;
+		}
+	}
+
+	label{
+		display: none;
+	}
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+	input {
+		width: 100%;
+	}
+}
+
+p.comment-form-author,
+p.comment-form-email{
+	@include query-above($lap) {
+		width: 50%;
+	}
+}
+
+.comment-form-comment,
+.logged-in-as {
+	@extend .grid__item;
+	width: 100%;
+}
+
+.comment-form-comment,
+.comment-subscription-form {
+
+	textarea {
+		width: 100%;
+		max-width: 100%;
+
+
+		border: 1px solid $borders;
+		font-size: rem(16px);
+	}
+}
+
+.form-submit {
+	margin-bottom: 0;
+	text-align: right;
+
+	#comment-submit {
+		@extend %btn--submit;
+		width: auto;
+
+		@include query-below($lap){
+			width: 100%;
+		}
+	}
+}
+
+.comment-subscription-form {
+	float: left;
+	clear: left;
+	margin-top: rem(20px);
+	margin-top: rem(10px);
+
+	& + & {
+		margin-top: 0;
+	}
+
+	input[type="checkbox"] {
+		margin-right: rem(20px);
+		position: relative;
+		top: -0.05em;
+	}
+}
+
+.add-comment {
+	margin-top: rem(40px);
+
+	.add-comment__button {
+
+		position: relative;
+		z-index: 1;
+
+		margin-right: rem(20px);
+		font-size: rem(24px);
+	}
+
+	.add-comment__text {
+		font-size: rem(20px);
+		font-weight: bold;
+	}
+}
+
+
+
+
+/* Comments Navigation */
+
+.comment-navigation {
+	@extend %clearfix;
+
+	position: relative;
+
+	margin-top: rem(40px);
+	margin-bottom: rem(40px);
+
+	.comment-number{
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		line-height: 20px;
+	}
+
+	.nav-previous, .nav-next{
+		a{
+			font-size: 18px;
+		}
+	}
+
+	.nav-previous{
+		float: left;
+	}
+
+	.nav-next{
+		float: right;
+	}
+}
+
+.comment-navigation + .commentlist > li:first-child{
+	margin-top: 0;
+}
+
+.nocomments{
+	transform: none;
+
+	span{
+		display: inline-block;
+		vertical-align: middle;
+		font-size: rem(28px);
+		line-height: 48px;
+	}
+}
+
+.no-comments-box{
+	position: relative;
+	z-index: 1;
+}
+
+div#respond{
+	padding-top: 0;
+
+	#reply-title{
+		margin-top: 0;
+	}
+
+	p.comment-subscription-form label{
+		color: #999;
+	}
+}

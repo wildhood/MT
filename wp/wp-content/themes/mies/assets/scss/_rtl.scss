@@ -1,0 +1,209 @@
+.rtl {
+	text-align: right;
+
+	&, * { direction: rtl }
+
+	pre:before {
+		left: auto;
+		right: 0;
+	}
+
+	.archive-blog blockquote,
+	.archive-blog blockquote:before,
+	.archive-blog blockquote a {
+		text-align: right;
+	}
+
+	.page-numbers.prev {
+		left: auto;
+		right: 0;
+
+		&:before {
+			content: url('assets/images/arrow-right.svg');
+			margin-left: rem(20px);
+			margin-right: 0;
+		}
+	}
+
+	.page-numbers.next {
+		right: auto;
+		left: 0;
+
+		&:after {
+			content: url('assets/images/arrow-left.svg');
+			margin-right: rem(20px);
+			margin-left: 0;
+		}
+	}
+
+	.navigation {
+		right: auto;
+		left: rem(20px);
+		@include query-above($lap) 	{ left: rem(40px) }
+		@include query-above($desk) { left: rem(60px) }
+	}
+
+	.logo {
+		left: auto;
+		right: rem(20px);
+		@include query-above($lap) 	{ right: rem(40px) }
+		@include query-above($desk) { right: rem(60px) }
+	}
+
+	.navigation__text,
+	.navigation__trigger {
+		float: right;
+	}
+
+	.navigation__menu-label {
+		padding-left: rem(20px);
+		padding-right: 0;
+	}
+
+	.navigation__links {
+		right: auto;
+		left: 0;
+		margin-left: rem(10px);
+		margin-right: 0;
+	}
+
+	.label--close {
+		right: auto;
+		left: rem(20px);
+	}
+
+	.grid { text-align: right }
+	.grid__item { float: right }
+
+	// News
+	.archive-blog .entry-header,
+	.masonry__item.type-post {
+		text-align: right; 
+	}
+
+	// Single 
+	.entry-content > .intro {
+		text-align: right;
+	}
+
+	// Comments
+	.comments-area-title .comments-title,
+	.comment-reply-title .comments-title {
+		margin-right: 0;
+		margin-left: $u/4; 
+	}
+
+	.comment__time {
+		margin-right: 0; 
+		margin-left: rem(20px); 
+	}
+
+	ul, ol {
+
+		ul, ol {
+			margin-left: 0;
+			margin-right: rhythm(2);
+		}
+	}
+
+	.commentlist li.comment,
+	.commentlist li.pingback,
+	.commentlist li.trackback {
+		@include query-above($lap) {
+			padding-left: 0;
+			padding-right: rem(50px);
+		}
+	}
+
+	.has--avatars {
+
+		.commentlist li.comment,
+		.commentlist li.pingback,
+		.commentlist li.trackback {
+			@include query-above($lap) {
+				padding-left: 0;
+				padding-right: rem(90px);
+			}
+
+			@include query-below($lap) {
+				.media__body {
+					padding-left: 0;
+					padding-right: rem(70px);
+				}
+			}
+		}
+
+		.commentlist {
+
+			&:before {
+				left: auto;
+				right: rem(29px);
+			}
+
+			&:after {
+				left: 0;
+				right: rem(29px);
+				background: linear-gradient(to left, rgba(215, 215, 215, 1) 0%,rgba(0,0,0,0.01) 30%);
+			}
+
+		}
+	}
+
+	.form-submit {
+		text-align: left;
+	}
+
+	.comment-edit-link,
+	.comment-reply-link {
+		margin-right: 0;
+		margin-left: rem(20px);
+	}
+
+	.comment__avatar {
+		left: auto;
+		right: 0;
+		margin-left: rem(12px);
+		margin-right: 0;
+	}
+
+	@include query-above($lap) {
+		@for $i from 2 through 10 {
+			li.depth-#{$i}:before {
+				left: auto;
+				right: rem(- ($i - 1) * 90px + 29px);
+			}
+		}
+	}
+
+	// Contact
+	.form-connected {
+
+		.grid__item {
+			padding-left: 0;
+
+			@include query-above($lap) {
+
+				&:first-child input {
+					border-right-width: 1px;
+					border-left-width: 0;
+				}
+			}
+		}
+	}
+
+	.form-connected + p,
+	.comment-form + p {
+		text-align: left; 
+	}
+
+	// Woocommerce
+	.woocommerce .addresses .title h3,
+	.woocommerce-page .addresses .title h3 {
+		float: right;
+	}
+
+	.woocommerce .addresses .title .edit,
+	.woocommerce-page .addresses .title .edit {
+		float: left;
+	}
+}

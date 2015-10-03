@@ -1,0 +1,43 @@
+.grid {
+	@extend %clearfix;
+	margin-left: rem(-60px);
+	margin-top: rem(-40px);
+	text-align: left;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.grid__item {
+	float: left;
+	width: 100%;
+	padding-left: rem(60px);
+	margin-top: rem(40px);
+}
+
+.grid--large {
+	margin-left: rem(-90px);
+
+	.grid__item {
+		padding-left: rem(90px);
+	}
+}
+
+.grid--small {
+	margin-left: rem(-30px);
+
+	.grid__item {
+		padding-left: rem(30px);
+	}
+}
+
+@for $i from 2 through 6 {
+
+	.grid-#{$i} > .grid__item {
+		@include query-above($lap) {
+			width: percentage(1/$i);
+		}
+	}
+
+}

@@ -1,0 +1,79 @@
+body {
+//	padding-top: rem(51px);
+}
+
+.accessibility {
+	@extend .hidden;
+}
+
+.demo .grid__item {
+
+	&:before {
+		content: "";
+		display: block;
+
+		height: 200px;
+		background-color: $dark;
+	}
+}
+
+.project-meta {
+	font-size: 0;
+	margin-top: rem(-60px);
+}
+
+.project-meta__field {
+	width: 50%;
+	display: inline-block;
+	font-size: 1rem;
+	margin-top: rem(60px);
+
+	@include query-below($hand) {
+		width: 100%;
+	}
+}
+
+.project-meta__value {
+	display: block;
+	font-size: rem(15px);
+	margin-top: 0.5em;
+}
+
+@for $i from 3 through 6 {
+	.field--#{$i}-in-row {
+		@include query-above($lap) {
+			width: percentage(1/$i);
+		}
+	}
+}
+
+.height--half {
+	height: 50vh;
+}
+
+.height--auto {
+	height: auto;
+}
+
+//Hide Infinite Scrolling "Loading.." text
+#infscr-loading {
+	display: none !important;
+}
+
+// this mofo was putting a blank space at the bottom of every page
+#_atssh{
+	display: none;
+}
+
+.site-content, .site-footer {
+	-webkit-hyphens: none;
+}
+
+.separator:empty:after {
+	display: none;
+}
+
+.hero__content 								{ pointer-events: none; }
+.hero__content > * 							{ pointer-events: auto; }
+.hero__content > .hero__content-wrap 		{ pointer-events: none; }
+.hero__content-wrap > * 					{ pointer-events: auto; }

@@ -1,0 +1,33 @@
+.gmap {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 15;
+
+	img {
+		max-width: none;
+	}
+}
+
+.gmap__marker {
+	position: relative;
+	top: rem(-55px);
+	left: rem(-23px);
+}
+
+.gmap__marker__btn {
+	@extend %btn;
+	@extend %btn--light;
+	padding: rem(10px) rem(20px);
+	padding-left: rem(60px);
+	min-width: 0;
+}
+
+.gmap__marker__img {
+	width: rem(42px);
+	position: absolute;
+	top: rem(2px);
+	left: rem(2px);
+}

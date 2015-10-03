@@ -1,0 +1,81 @@
+.filter {
+	margin-bottom: rem(40px);
+
+	@include query-below($lap) {
+		margin-bottom: rem(20px);
+	}
+}
+
+.filter .filter__label {
+	margin-right: rem(20px);
+	color: $dark;
+	font-weight: 700;
+
+	@include query-below($lap) {
+		margin-right: 0;
+	}
+
+	&:after {
+		content: ": ";
+	}
+}
+
+.filter__fields {
+
+	a {
+		color: $light;
+		transition: color .2s ease-in-out;
+
+		&:hover, &.current {
+			color: $dark;
+		}
+	}
+}
+
+.filter__tags {
+	opacity: 0;
+	z-index: 1;
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	transition: opacity .2s ease-in-out;
+
+	&.current {
+		opacity: 1;
+		z-index: 2;
+	}
+
+	.btn-link {
+		display: inline-block;
+		margin: 0 rem(10px);
+		border-bottom: 1px solid transparent;
+
+		&.selected, &:hover {
+			border-bottom: 1px solid $dark;
+			color: $dark;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.filter__tags-container {
+	margin-bottom: rem(60px);
+
+	@include query-below($lap) {
+		margin-bottom: rem(20px);
+	}
+}
+
+.filter, .filter__tags-container {
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+	pointer-events: none;
+
+	&.usable {
+		pointer-events: auto;
+		opacity: 1;
+	}
+}

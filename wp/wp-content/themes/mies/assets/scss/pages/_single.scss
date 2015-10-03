@@ -1,0 +1,71 @@
+// Single post styles
+
+.single {
+	.entry-header {
+		text-align: center;
+	}
+
+	.entry-thumbnail{
+		margin-bottom: rem(40px);
+
+		@include query-above($lap){
+			margin-left: rem(-120px);
+			margin-right: rem(-120px);
+		}
+	}
+
+	.entry-title{
+		margin-bottom: rem(28px);
+	}
+}
+
+.entry-meta{
+	font-size: rem(15px);
+	margin: rem(25px) 0;
+
+	a{
+		color: $light;
+		border: 0;
+		text-decoration: none;
+	}
+}
+
+.entry-date:after {
+	content: "\2013";
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.entry-header a{
+	color: $gray;
+}
+
+.cat-links{
+	a{
+		color: #7a7c80;
+	}
+}
+
+//password protection
+
+.form-password {
+	text-align: center;
+
+	.auth__pass{
+		max-width: rem(500px);
+		margin: rem(40px) auto;
+	}
+}
+
+// search - no results
+
+.search-no-results {
+	.archive-blog{
+		text-align: center;
+	}
+}
+
+.error404 .container{
+	padding: rem(200px) 0;
+}
+

@@ -1,0 +1,55 @@
+@mixin media-query($condition) {
+	@media #{$condition} {
+		@content;
+	}
+}
+
+@mixin query($direction, $value, $use-ems: true) {
+
+	@if ($use-ems == true) {
+		$value: 1em * $value / $font-size;
+	}
+
+	@if ($direction == 'above') {
+		@media only screen and (min-width: $value) {
+			@content;
+		}
+	} @else {
+		@media not screen and (min-width: $value) {
+			@content;
+		}
+	}
+
+}
+
+// shortcuts
+@mixin query-below($value) {
+
+	@include query('below', $value, $font-size) {
+		@content;
+	}
+
+}
+
+@mixin query-above($value) {
+
+	@include query('above', $value, $font-size) {
+		@content;
+	}
+
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content
+	}
+	&:-moz-placeholder {
+		@content
+	}
+	&::-moz-placeholder {
+		@content
+	}
+	&:-ms-input-placeholder {
+		@content
+	}
+}

@@ -1,0 +1,90 @@
+// Homepage selected projects component
+
+.projects {
+	transition: height .3s ease-in-out;
+}
+
+.projects--grid {
+	@extend .grid;
+	@extend .grid--small;
+
+	.project.project {
+		@include query-below($lap) {
+			margin-bottom: 0;
+		}
+	}
+
+	.project a{
+		display: block;
+	}
+}
+
+.project {
+	@extend .grid__item;
+
+	margin-bottom: rem(50px);
+	width: 100%;
+	text-align: center;
+	transform: translateZ(0);
+
+	@include query-above(480px) {
+		width: 50%;
+	}
+
+	@include query-above($lap) {
+		width: 33.3333333%;
+	}
+}
+
+// project columns option
+$config: (
+		small: 	1 2 3,
+		medium: ($lap, 1 2 3 4 5),
+		large: 	($desk, 1 2 3 4 5 6)
+);
+
+@each $breakpoint, $list in $config {
+	@if $breakpoint == small {
+		@each $columns in $list {
+			.projects-#{$breakpoint}-col-#{$columns} > .project {
+				width: percentage(1/$columns);
+			}
+		}
+	} @else {
+		@include query-above(nth($list, 1)) {
+			@each $columns in nth($list, 2) {
+				.projects-#{$breakpoint}-col-#{$columns} > .project {
+					width: percentage(1/$columns);
+				}
+			}
+		}
+	}
+}
+
+.project__image {
+	margin-bottom: rem(30px);
+}
+
+.project__title {
+	margin-bottom: 0;
+}
+
+.project__categories {
+	li {
+		font-size: rem(13px);
+		font-style: italic;
+		font-family: "Georgia", serif;
+
+		&:after {
+			content: ",";
+		}
+
+		&:last-child:after {
+			content: none;
+		}
+	}
+
+	&, a {
+		color: $gray;
+	}
+}

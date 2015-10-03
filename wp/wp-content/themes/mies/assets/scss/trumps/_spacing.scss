@@ -1,0 +1,59 @@
+$breakpoints: () !default;
+
+$suffixes: (
+		0.25: 	'--',
+		0.5: 	'-',
+		0: 		'0',
+		1: 		'',
+		2: 		'\+',
+		4:	 	'\+\+'
+);
+
+$affixes: (
+		m:  margin, // all
+		me: (margin-top, margin-bottom), // end
+		ms: (margin-right, margin-left), // sides
+		pe: (padding-top, padding-bottom), // end
+		ps: (padding-right, padding-left), // sides
+		mt: margin-top,
+		mr: margin-right,
+		mb: margin-bottom,
+		ml: margin-left,
+		p:  padding, // all
+		pt: padding-top,
+		pr: padding-right,
+		pb: padding-bottom,
+		pl: padding-left,
+		t: 	top,
+		r:  right,
+		b:  bottom,
+		l:  left
+);
+
+@mixin spacings($prefix: '') {
+	@if ($prefix != '') {
+		$prefix: $prefix + '-';
+	}
+
+	@each $affix, $properties in $affixes {
+		@each $value, $suffix in $suffixes {
+			.#{$prefix}#{$affix}#{$suffix} {
+				@each $property in $properties {
+					@if $value == 0 {
+						#{$property}: 0;
+					} @else {
+						#{$property}: rhythm($value);
+					}
+				}
+			}
+		}
+	}
+}
+
+@include spacings();
+
+@each $prefix, $condition in $breakpoints {
+	@include media-query($condition) {
+		@include spacings($prefix);
+	}
+}

@@ -1,0 +1,23 @@
+$font-size: 		17px;
+$line-height:		27/17;
+
+$u: 				$line-height * 1rem;
+
+$white:				#f8f8f8;
+$lightest: 			#d7d7d7;
+$light:				#afafaf;
+$gray: 				#555659;
+$dark:				#171617;
+$borders: 			$lightest;
+
+$hand:				321px;
+$lap:				800px;
+$desk:				1200px;
+
+$editor-style:		false;
+$use-fractions: 	false;
+
+$breakpoints: (
+	lap: 'not screen and (max-width: ' + $lap*1em/16px + ')',
+	desk: 'not screen and (max-width: ' + $desk*1em/16px + ')'
+)

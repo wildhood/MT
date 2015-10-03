@@ -1,0 +1,63 @@
+.widget__title{
+	font-weight: 700;
+}
+
+.widget .btn-list a{
+	width: rem(30px);
+	height: rem(30px);
+	margin-right: rem(3px);
+	display: inline-block;
+
+	text-align: center;
+	line-height: rem(30px);
+
+	border-radius: 50%;
+
+	.footer &{
+		background-color: white;
+		color: $dark;
+	}
+}
+
+
+// Sidebar form single posts
+.sidebar--single-post {
+	.widget__title{
+		margin-bottom: rem(20px);
+	}
+
+	.widget {
+		margin-bottom: rem(60px);
+	}
+
+	ul {
+		@extend .menu;
+
+		li {
+			margin-bottom: rem(10px);
+		}
+	}
+
+	select {
+		max-width: 100%;
+	}
+
+	.widget_rss {
+		li {
+			margin-bottom: rem(20px);
+		}
+
+		a.rsswidget {
+			font-weight: 400;
+		}
+
+		.rss-date:before {
+			content: "\2013";
+			margin: 0 3px;
+		}
+
+		.rssSummary{
+			font-size: 90%;
+		}
+	}
+}

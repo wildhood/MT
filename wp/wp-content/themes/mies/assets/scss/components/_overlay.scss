@@ -1,0 +1,113 @@
+//*------------------------------------*\
+//   $OVERLAYS
+//*------------------------------------*/
+
+.overlay {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	z-index: 99;
+	opacity: 0;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	background: $dark;
+	color: white;
+	transform: translateZ(0);
+	display: table;
+
+	a {
+		color: white;
+	}
+}
+
+.overlay__wrapper {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	// @todo better when widget areas are added to the navigation overlay
+	width: 100%;
+
+	.is--IE & {
+		min-height: 0 !important;
+	}
+}
+
+.overlay, 
+.overlay__wrapper {
+
+	.is--IE & {
+		display: block !important;
+		width: 100%; 
+	}
+}
+
+.overlay--navigation {
+	display: block;
+
+	.overlay__wrapper {
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+
+// AddThis hide the tooltip shown on hover over the plus button
+#at15s.atm {
+	display: none !important;
+}
+
+.overlay__sidebar {
+	display: block;
+	margin: rem(60px) auto;
+	min-height: rem(40px);
+	font-size: rem(24px);
+	font-weight: 300;
+
+	> .one-whole {
+		width: auto !important;
+	}
+
+	.widget {
+		text-align: center;
+		margin-bottom: rem(40px);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.widget__title {
+		display: none;
+	}
+
+	.widget_pages,
+	.widget_categories,
+	.widget_meta,
+	.widget_recent_entries,
+	.widget_archive,
+	.widget_nav_menu > div {
+
+		> ul {
+			@extend .menu--slashes;
+		}
+
+		ul ul {
+			display: none;
+		}
+	}
+}
+
+@include query-below($lap) {
+	.admin-bar .sidebar__overlay-before {
+		margin-top: 100px;
+	}
+}
+
+.btn.btn--close-overlay {
+	font-size: 25px;
+	min-width: 0;
+}

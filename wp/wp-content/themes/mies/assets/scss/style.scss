@@ -1,0 +1,259 @@
+/*
+Theme Name: Mies
+Theme URI: http://pixelgrade.com/demos/mies/
+Author: PixelGrade
+Author URI: http://pixelgrade.com
+Description: MIES is a front line parallax Architecture WordPress Theme prized for allowing you to present your activity within a delightful and captivating experience. It's perfect for a full range of presentations and portfolio projects of designers, architects or photographers.
+Version: 1.6.0
+License: Themeforest Split Licence
+License URI: -
+Text Domain: mies_txtd
+Domain Path: /languages/
+Tags: white, light, dark, responsive-layout, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options, translation-ready
+*/
+
+/**
+ * Table of contents
+ * ------------------------
+ *
+ * 1.0 - Normalize
+ * 2.0 - Reset
+ * 3.0 - Base Styles
+ *   3.1 - Shared
+ *   3.2 - Typography
+ *   3.3 - Images
+ * 4.0 - Helpers
+ * 5.0 - Layout
+ * 6.0 - Patterns
+ *   6.1 - Grid
+ *   6.2 - Menu
+ *   6.3 - Separators
+ *   6.4 - Buttons
+ *   6.5 - Pagination
+ *   6.6 - Search form
+ *   6.7 - Widgets
+ *   6.8 - Video background
+ *   6.9 - Contact form
+ *   6.10 - Icons
+ *   6.11 - GMap
+ * 7.0 - Components
+ *   7.1 - Header
+ *   7.2 - Hero
+ *   7.3 - Footer
+ *   7.4 - Comments
+ *   7.5 - Masonry items
+ *   7.6 - Selected projects
+ *   7.7 - Filter
+ *   7.8 - Share overlay
+ * 8.0 - Pages
+ *   8.1 - Single
+ *   8.2 - Blog
+ * 9.0 - Vendor / plugins
+ * 10.0 - Shortcodes
+ * 0.0 - Shame
+ */
+
+
+
+
+
+@import "settings";
+
+@import "tools/mixins";
+@import "tools/baseline";
+
+
+// #GENERIC
+
+/**
+ * 1.0 - Normalize
+ */
+@import "generic/normalize";
+
+/**
+ * 2.0 - Reset
+ */
+@import "generic/reset";
+
+
+
+
+
+/**
+ * 3.0 - Base Styles
+ *   3.1 - Shared
+ */
+@import "base/shared";
+/**
+ *   3.2 - Typography
+ */
+@import "base/type";
+/**
+ *   3.3 - Images
+ */
+@import "base/images";
+@import "base/forms";
+
+
+
+
+// #TRUMPS
+
+/**
+ * 4.0 - Helpers
+ */
+@import "trumps/clearfix";
+@import "trumps/bass";
+@import "trumps/spacing";
+@import "trumps/widths";
+
+
+
+
+// #LAYOUT
+
+/**
+ * 5.0 - Layout
+ */
+@import "layout/layout";
+
+
+
+
+
+// #OBJECTS
+
+/**
+ * 6.0 - Patterns
+ *   6.1 - Grid
+ */
+@import "objects/grid";
+/**
+ *   6.2 - Menu
+ */
+@import "objects/menu";
+/**
+ *   6.3 - Separators
+ */
+@import "objects/separators";
+/**
+ *   6.4 - Buttons
+ */
+@import "objects/buttons";
+/**
+ *   6.5 - Pagination
+ */
+@import "objects/pagination";
+/**
+ *   6.6 - Search form
+ */
+@import "objects/search-form";
+/**
+ *   6.7 - Widgets
+ */
+@import "objects/widgets";
+/**
+ *   6.8 - Video background
+ */
+@import "objects/video-background";
+/**
+ *   6.9 - Contact form
+ */
+@import "objects/contact-form";
+/**
+ *   6.10 - Icons
+ */
+@import "objects/icons";
+/**
+ *   6.11 - GMap
+ */
+@import "objects/gmap";
+
+
+
+
+
+// #COMPONENTS
+
+/**
+ * 7.0 - Components
+ *   7.1 - Header
+ */
+@import "components/header";
+/**
+ *   7.2 - Hero
+ */
+@import "components/hero";
+/**
+ *   7.3 - Footer
+ */
+@import "components/footer";
+/**
+ *   7.4 - Comments
+ */
+@import "components/comments";
+/**
+ *   7.5 - Masonry items
+ */
+@import "components/masonry";
+/**
+ *   7.6 - Selected projects
+ */
+//@import "components/selected-projects";
+
+/**
+ *   7.7 - Filter
+ */
+@import "components/filter";
+/**
+ *   7.8 - Share overlay
+ */
+@import "components/overlay";
+@import "components/share-icons";
+@import "components/sidebar";
+
+
+
+
+
+/**
+ * 8.0 - Pages
+ *   8.1 - Single
+ */
+@import "pages/single";
+/**
+ *   8.2 - Blog
+ */
+@import "pages/archive-blog";
+
+
+
+
+
+/**
+ * 9.0 - Vendor / plugins
+ */
+@import "vendor/icon-fonts";
+@import "plugins/royalslider";
+@import "plugins/magnific-popup/main";
+@import "plugins/magnific-popup/settings";
+@import "vendor/addthis";
+
+
+
+
+
+/**
+ * 10.0 - Shortcodes
+ */
+@import "shortcodes/teammember";
+@import "shortcodes/tabs";
+
+
+@import "rtl";
+
+
+/**
+ * 0.0 - Shame
+ */
+@import "shame";

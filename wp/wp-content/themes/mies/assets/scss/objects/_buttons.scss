@@ -1,0 +1,83 @@
+body .btn, body a.btn {
+	@extend %btn;
+	@extend %btn--dark;
+}
+
+
+// General Style for Buttons
+
+%btn {
+	@extend %alpha;
+	display: inline-block;
+	min-width: 230px;
+	padding: 16px 35px;
+
+	font-size: rem(14px);
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	border-radius: 40px;
+	border: none;
+
+	outline: none;
+
+	transition: all 0.2s ease;
+}
+
+// Dark Background with White Text
+
+%btn--dark {
+	color: white;
+	background-color: $dark;
+
+	&:hover {
+		color: white;
+		background-color: $gray;
+	}
+}
+
+
+// White Background with Dark Text
+
+%btn--light {
+	color: $dark;
+	background-color: white;
+
+	&:hover {
+		color: $gray;
+		background-color: white;
+	}
+}
+
+
+// Light Borders with Gray Text
+// Used for Submit Buttons
+
+%btn--submit {
+	@extend %btn;
+
+//	float: right;
+
+	min-width: 0;
+	margin-top: rem(30px);
+
+	background-color: transparent;
+	border: 1px solid $borders;
+	color: $light;
+
+	letter-spacing: .3em;
+
+	&:hover{
+		color: $white;
+		background-color: $dark;
+		border-color: $dark;
+	}
+}
+
+
+.btn-link {
+	background: none;
+	border: 0;
+	padding: 0;
+}

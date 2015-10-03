@@ -1,0 +1,464 @@
+html, body {
+	height: 100%;
+}
+
+.hero {
+	position: relative;
+	display: table;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	pointer-events: none;
+
+	.covers &,
+	.is--IE &,
+	.touch & {
+		pointer-events: auto;
+	}
+
+	@include query-below($lap) {
+		.gmap {
+			pointer-events: none;
+		}
+	}
+
+	z-index: 5;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	& + & {
+		margin-top: 0;
+	}
+
+	&.full-height {
+		height: 100%;
+	}
+
+	&.half-height {
+		height: 50%;
+	}
+
+	&.two-thirds-height {
+		height: 66.666666%;
+	}
+
+	a {
+		color: white;
+		pointer-events: auto;
+	}
+
+	h1 {
+		@extend %large;
+	}
+
+	.is--IE & {
+		display: table;
+		// height: auto !important;
+		padding-top: rem(100px);
+		padding-bottom: rem(100px);
+
+		&.content {
+			min-height: 0 !important;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		&.auto-height:not(.hero--map):not(.hero--slider-container) {
+			min-height: 0 !important;
+		}
+	}
+}
+
+.hero__description .huge,
+.hero .huge {
+	@include query-above($desk) {
+		font-size: rem(100px);
+	}
+}
+
+.hero--slider-container .hero__title {
+	@extend %large;
+}
+
+.hero--map {
+	position: relative;
+
+	.hero__overflow:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -50px;
+		right: -50px;
+		height: 100%;
+		box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.15);
+		z-index: 20;
+		pointer-events: none;
+	}
+}
+
+.gmap {
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	overflow: hidden;
+
+	.touch &,
+	.is--IE & {
+		display: block;
+		transform: none;
+		top: 0;
+		z-index: 200;
+	}
+}
+
+.js-hero-bg {
+	will-change: transform;
+}
+
+.covers .hero__bg .gmap {
+	img,
+	picture {
+		max-width: none;
+		max-height: none;
+		min-width: 0;
+		min-height: 0;
+	}
+}
+
+.hero__slider {
+	position: absolute;
+	top: 50%; left: 0;
+	width: 100%;
+	height: 100%;
+	transform: translateY(-50%) translateZ(0);
+
+	.rsContent {
+		position: absolute;
+		top: 0; left: 0;
+	}
+
+	.touch &,
+	.is--IE & {
+		top: 0;
+		transform: none;
+	}
+
+	img {
+		opacity: 0;
+	}
+
+	&.slider--loaded img {
+		opacity: 1;
+	}
+}
+
+
+
+.hero__title,
+.hero__subtitle,
+.hero__description,
+.hero__caption {
+//  why, man, why?!
+//	width: auto !important;
+	display: inline-block;
+	pointer-events: auto;
+
+	.hero--shadowed & {
+		padding: 0.125em 0.5em 0.125em 0.625em;
+	}
+}
+
+.hero__description {
+	display: block;
+
+	.touch &,
+	.is--IE & {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.hero--shadowed & {
+		padding: 1em 0.625em;
+	}
+
+	*:last-child {
+		margin-bottom: 0;
+	}
+
+	.pixslider {
+		max-width: 90%;
+		max-height: 50%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.hero__subtitle {
+	margin-bottom: rem(20px);
+}
+
+%hero--light,
+.hero--light {
+
+	.hero__title,
+	.hero__subtitle,
+	.hero__description,
+	.hero__caption {
+		color: white;
+	}
+
+	.hero__description * {
+		color: white;
+	}
+
+	.hero__description .btn {
+		color: $dark;
+	}
+}
+
+.hero--light {
+
+	.hero__description .btn,
+	.hero__content .btn,
+	.btn {
+		@extend %btn--light;
+	}
+}
+
+.hero--shadowed {
+	@extend %hero--light;
+
+	.hero__title,
+	.hero__subtitle,
+	.hero__description,
+	.hero__caption {
+		background: rgba(0,0,0,0.35);
+	}
+
+	.hero__description {
+		padding-bottom: 1em;
+	}
+}
+
+.hero--dark {
+
+	.hero__title,
+	.hero__subtitle,
+	.hero__description,
+	.hero__caption,
+	a {
+		color: $dark;
+	}
+
+	.btn {
+		@extend .btn;
+	}
+}
+
+.svg-arrow {
+
+	path {
+		fill: white;
+
+		.hero--shadowed &,
+		.hero--dark & {
+			fill: black;
+		}
+	}
+}
+
+.arrow--down {
+	position: absolute;
+	bottom: rem(60px);
+	left: 50%;
+	z-index: 50;
+
+	display: block;
+	padding: 12px;
+
+	cursor: pointer;
+	opacity: 0;
+	transform: translateX(-50%);
+
+	.is--IE & {
+		background: rgba(255, 255, 255, 0.01);
+	}
+
+	@include query-below($lap) {
+		.hero & {
+			display: none;
+		}
+	}
+}
+
+.hero__content {
+//	@extend .break-word;
+	display: table-cell;
+	position: relative;
+	z-index: 10;
+	vertical-align: middle;
+	transform: translateZ(0);
+
+	// Next to each other
+	h2, h3, h4 {
+		& + h1 {
+			margin-top: -0.22em;
+		}
+	}
+
+	h1 + h2, h1 + h3, h1 + h4{
+		margin-top: -2.5em;
+	}
+
+	// .is--IE & {
+	// 	display: block;
+	// }
+}
+
+.hero__content-wrap {
+//	display: inline-block;
+	position: relative;
+	z-index: 9;
+}
+
+.hero__bg {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	display: none;
+	// background: $dark;
+
+	.covers & {
+		position: fixed;
+		// opacity: 0;
+
+		img,
+		picture {
+			position: absolute;
+			max-width: none;
+			min-width: 100%;
+			min-height: 100%;
+
+			&.rsImg {
+				min-width: 0;
+				min-height: 0;
+			}
+		}
+	}
+
+	.rsBullets,
+	.rsArrows {
+		pointer-events: auto;
+	}
+
+	.covers &.hero--slider-container,
+	.covers .hero--slider-container & {
+		opacity: 1;
+	}
+
+	.is--IE & {
+		position: absolute;
+		top: 0; left: 0;
+		display: block;
+	}
+
+	.covers &,
+	.touch &,
+	.is--IE {
+		display: block;
+	}
+
+	&:empty {
+		display: none;
+	}
+
+	> picture {
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	> img,
+	> picture > img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		.touch &,
+		.is--IE & {
+			max-width: none;
+			min-height: 100%;
+			min-width: 101%;
+			width: auto !important;
+		}
+	}
+
+	.touch & > picture > img,
+	.is--IE & > picture > img {
+		max-width: none;
+		width: auto !important;
+		min-width: 101%;
+		min-height: 100%;
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.touch &,
+	.is--IE & {
+		opacity: 1;
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.touch .hero--light &,
+	.is--IE .hero--light & {
+		background: $dark;
+	}
+}
+
+.covers .hero--slider-container .has-no-image {
+	background: $dark;
+}
+
+.hero__caption {
+	position: absolute;
+	font-size: rem(13px);
+	bottom: rem(60px);
+	right: rem(60px);
+	transition: all .3s ease-in-out;
+	transition-property: padding, color, background-color;
+}
+
+.hero__arrow {
+	position: absolute;
+	bottom: rem(60px);
+	left: 50%;
+}
+
+.hero__title,
+.hero__subtitle,
+.hero__btn,
+.hero__description {
+	opacity: 0;
+}
+
+.hero__description + .hero__btn {
+	margin-top: rem(40px);
+}
+
+// when title-hero gets under the menu
+@include query-below($lap) {
+	.overlay--navigation + .hero.content {
+		margin-top: rem(60px);
+	}
+}

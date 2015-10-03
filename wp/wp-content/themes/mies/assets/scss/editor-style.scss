@@ -1,0 +1,122 @@
+// Settings     -- Default, settings and variables.
+// Tools        -- Functions and mixins.
+// Generic      -- Generic, high-level styling, like resets, etc.
+// Object       -- Objects and abstractions.
+// Components   -- Your designed UI elements.
+// Trumps       -- Overrides and helper classes.
+// Pages        -- Global styles for specific pages
+// Vendor
+// Shame        -- the place for prototyping, quick fixes and overrides
+
+
+
+/*
+Theme Name: Hive
+Description: Used to style the TinyMCE editor.
+*/
+
+
+/**
+ *
+ * Table of Contents
+ * --------------------------------------------------
+ *  1.0 - Body
+ *  2.0 - Base Styles
+ *    2.1 - Typography
+ *    2.2 - Images
+ *  3.0 - Media queries
+ */
+
+
+
+$editor-style: true;
+
+// #SETTINGS
+
+@import "settings";
+
+//Used for Editor Style mode
+$editor-style: true;
+
+
+
+
+// #TOOLS
+
+@import "tools/baseline";
+@import "tools/mixins";
+
+
+
+// #BODY
+
+/**
+ * 1.0 - Body
+ * --------------------------------------------------
+ */
+
+@import "base/shared";
+
+html {
+	padding: 24px 36px;
+}
+
+body.wp-editor {
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+
+	font-size: rem(17px);
+}
+
+
+
+
+
+/**
+ * 2.0 - Base Styles
+ *   2.1 - Typography
+ *   -------------------------------------------------
+ */
+@import "trumps/bass";
+@import "trumps/clearfix";
+@import "base/type";
+
+
+
+
+
+/**
+ *   2.2 - Images
+ *   -------------------------------------------------
+ */
+@import "base/images";
+
+
+
+
+
+// #TRUMPS
+
+.wp-caption {
+	text-align: left;
+
+	&.alignleft		{ @extend .alignleft; }
+	&.alignright     { @extend .alignright; }
+	&.aligncenter    { @extend .aligncenter; }
+	&.alignnone      { @extend .alignnone; }
+}
+
+#wp-image-toolbar {
+	z-index: 2;
+}
+
+
+@import "objects/separators";
+
+
+
+/**
+ * 3.0 - Media queries
+ * --------------------------------------------------
+ */

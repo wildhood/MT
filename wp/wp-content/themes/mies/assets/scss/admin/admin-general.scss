@@ -1,0 +1,209 @@
+$border   : #d9d9d9;
+$light    : #919191;
+$body     : #515150;
+$dark     : #262526;
+$accent   : #0095ea;
+
+//*------------------------------------*\
+//   $Projects and $Pages
+//*------------------------------------*/
+
+///**
+// * HERO AREA thumbnails
+// */
+
+#_post_aside {
+
+	&.no-image {
+		.inside {
+
+		}
+
+		#pixgallery {
+			margin: 10px 5px;
+			min-height: 115px;
+
+			.open_pixgallery {
+				border: 1px dashed #d9d9d9;
+
+				.icon {
+					opacity: 1;
+					color: $dark;
+				}
+				//Change Edit Icon to Upload
+				.icon:before {
+					content: "\f093";
+				}
+
+				&:hover .icon {
+					color: $accent;
+				}
+			}
+		}
+
+		// Not needed to clear anything
+		.clear_gallery {
+			display: none !important;
+		}
+	}
+
+	&.single-image {
+
+	}
+
+	&.multiple-images {
+		#pixgallery > ul {
+			margin: 0;
+
+			li {
+				width: 33%;
+				margin: 0;
+				padding: 5px;
+
+				@extend %box-sizing;
+			}
+		}
+	}
+
+
+	#pixgallery {
+		.open_pixgallery {
+			opacity: 1;
+			background: none;
+			-webkit-transition: opacity .1s ease-in 0;
+
+			// Edit Icon on Hover
+			.icon {
+					opacity: 0;
+					-webkit-transition: opacity .1s ease-in 0, color .1s ease-in 0;
+					font-size: 40px;
+					color: $dark;
+
+					&:before {
+						content: "\f040";
+
+						@extend %centered;
+					}
+			}
+
+			.clear_gallery {
+				display: block;
+				margin: 0;
+
+				opacity: 0;
+				color: $light;
+				background: none;
+
+				text-transform: uppercase;
+				font-size:11px;
+
+				-webkit-transition: opacity .1s ease-in 0, color .1s ease-in 0;
+
+				&:hover {
+					color: $accent;
+				}
+			}
+
+
+			&:hover {
+
+				.icon, .clear_gallery {
+					opacity: 1;
+				}
+			}
+		}
+
+		& > ul {
+			min-height: 0;
+			padding: 0;
+		}
+
+		& > ul li {
+			width: 100%;
+			text-align: center;
+
+			img {
+				width: auto;
+				height: auto;
+
+				border-radius: 0;
+			}
+		}
+	}
+
+
+	table.cmb_metabox td, table.cmb_metabox th {
+		padding: 0;
+
+		border-bottom: none;
+	}
+}
+
+//hide attachment options link ( media file, video, external url etc)
+//anywhere BUT on project pages and pages
+body:not(.post-type-mies_portfolio):not(.post-type-page) .compat-item{
+	display: none;
+}
+
+
+
+//*------------------------------------*\
+//   $HELPERS
+//*------------------------------------*/
+
+%centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+%box-sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// make a tip for fields which can store a space character only to hide the value
+.cmb_metabox {
+	.empty label {
+		text-decoration: line-through;
+	}
+
+	.empty td:after {
+		opacity: 0;
+		content: " (This field will not be displayed)";
+		font-size: 80%
+	}
+
+	.empty:hover td:after {
+		opacity: 0.3;
+	}
+
+	.empty input {
+		opacity: 0.5;
+	}
+}
+
+div#pixfields {
+	display: none;
+
+	&.active {
+		display:block;
+	}
+}
+
+
+// Theme Options - Portfolio Floating Menu Labels
+#info-project-menu-labels + table tr {
+	width: 50%;
+	float: left;
+
+	td, input {
+		width: 100%;
+	}
+}

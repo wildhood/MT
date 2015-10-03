@@ -1,0 +1,232 @@
+$breakpoints: () !default;
+
+$use-fractions: true !default;
+
+@mixin widths-fractions($prefix) {
+	/**
+	 * Whole.
+	 */
+	[class~="#{$prefix}1/1"]     { width: 100% !important; }
+
+	/**
+	 * Halves.
+	 */
+	[class~="#{$prefix}1/2"],
+	[class~="#{$prefix}2/4"],
+	[class~="#{$prefix}3/6"],
+	[class~="#{$prefix}4/8"],
+	[class~="#{$prefix}5/10"],
+	[class~="#{$prefix}6/12"]     { width: 50% !important; }
+
+	/**
+	 * Thirds.
+	 */
+	[class~="#{$prefix}1/3"],
+	[class~="#{$prefix}2/6"],
+	[class~="#{$prefix}3/9"],
+	[class~="#{$prefix}4/12"]     { width: 33.3333333% !important; }
+	[class~="#{$prefix}2/3"],
+	[class~="#{$prefix}4/6"],
+	[class~="#{$prefix}6/9"],
+	[class~="#{$prefix}8/12"]     { width: 66.6666666% !important; }
+
+	/**
+	 * Quarters.
+	 */
+	[class~="#{$prefix}1/4"],
+	[class~="#{$prefix}2/8"],
+	[class~="#{$prefix}3/12"]     { width: 25% !important; }
+	[class~="#{$prefix}3/4"],
+	[class~="#{$prefix}6/8"],
+	[class~="#{$prefix}9/12"]     { width: 75% !important; }
+
+	/**
+	 * Fifths.
+	 */
+	[class~="#{$prefix}1/5"],
+	[class~="#{$prefix}2/10"]     { width: 20% !important; }
+	[class~="#{$prefix}2/5"],
+	[class~="#{$prefix}4/10"]     { width: 40% !important; }
+	[class~="#{$prefix}3/5"],
+	[class~="#{$prefix}6/10"]     { width: 60% !important; }
+	[class~="#{$prefix}4/5"],
+	[class~="#{$prefix}8/10"]     { width: 80% !important; }
+
+	/**
+	 * Sixths.
+	 */
+	[class~="#{$prefix}1/6"],
+	[class~="#{$prefix}2/12"]     { width: 16.6666666% !important; }
+	[class~="#{$prefix}5/6"],
+	[class~="#{$prefix}10/12"]    { width: 83.3333333% !important; }
+	/**
+	 * Eighths.
+	 */
+	[class~="#{$prefix}1/8"]      { width: 12.5% !important; }
+	[class~="#{$prefix}3/8"]      { width: 37.5% !important; }
+	[class~="#{$prefix}5/8"]      { width: 62.5% !important; }
+	[class~="#{$prefix}7/8"]      { width: 87.5% !important; }
+
+	/**
+	 * Ninths.
+	 */
+	[class~="#{$prefix}1/9"]      { width: 11.1111111% !important; }
+	[class~="#{$prefix}2/9"]      { width: 22.2222222% !important; }
+	[class~="#{$prefix}4/9"]      { width: 44.4444444% !important; }
+	[class~="#{$prefix}5/9"]      { width: 55.5555555% !important; }
+	[class~="#{$prefix}7/9"]      { width: 77.7777777% !important; }
+	[class~="#{$prefix}8/9"]      { width: 88.8888888% !important; }
+
+	/**
+	 * Tenths.
+	 */
+	[class~="#{$prefix}1/10"]     { width: 10% !important; }
+	[class~="#{$prefix}3/10"]     { width: 30% !important; }
+	[class~="#{$prefix}7/10"]     { width: 70% !important; }
+	[class~="#{$prefix}9/10"]     { width: 90% !important; }
+
+	/**
+	 * Twelfths.
+	 */
+	[class~="#{$prefix}1/12"]     { width:  8.3333333% !important; }
+	[class~="#{$prefix}5/12"]     { width: 41.6666666% !important; }
+	[class~="#{$prefix}7/12"]     { width: 58.3333333% !important; }
+	[class~="#{$prefix}11/12"]    { width: 91.6666666% !important; }
+}
+
+
+@mixin widths-named($prefix) {
+	/**
+	 * Whole.
+	 */
+	.#{$prefix}one-whole          { width: 100% !important; }
+
+	/**
+	 * Halves.
+	 */
+	.#{$prefix}one-half,
+	.#{$prefix}two-quarters,
+	.#{$prefix}three-sixths,
+	.#{$prefix}four-eighths,
+	.#{$prefix}five-tenths,
+	.#{$prefix}six-twelfths       { width: 50% !important; }
+
+	/**
+	 * Thirds.
+	 */
+	.#{$prefix}one-third,
+	.#{$prefix}two-sixths,
+	.#{$prefix}three-ninths,
+	.#{$prefix}four-twelfths      { width: 33.3333333% !important; }
+	.#{$prefix}two-thirds,
+	.#{$prefix}four-sixths,
+	.#{$prefix}six-ninths,
+	.#{$prefix}eight-twelfths     { width: 66.6666666% !important; }
+
+	/**
+	 * Quarters.
+	 */
+	.#{$prefix}one-quarter,
+	.#{$prefix}two-eighths,
+	.#{$prefix}three-twelfths     { width: 25% !important; }
+	.#{$prefix}three-quarters,
+	.#{$prefix}six-eighths,
+	.#{$prefix}nine-twelfths      { width: 75% !important; }
+
+	/**
+	 * Fifths.
+	 */
+	.#{$prefix}one-fifth,
+	.#{$prefix}two-tenths         { width: 20% !important; }
+	.#{$prefix}two-fifths,
+	.#{$prefix}four-tenths        { width: 40% !important; }
+	.#{$prefix}three-fifths,
+	.#{$prefix}six-tenths         { width: 60% !important; }
+	.#{$prefix}four-fifths,
+	.#{$prefix}eight-tenths       { width: 80% !important; }
+
+	/**
+	 * Sixths.
+	 */
+	.#{$prefix}one-sixth,
+	.#{$prefix}two-twelfths       { width: 16.6666666% !important; }
+	.#{$prefix}five-sixths,
+	.#{$prefix}ten-twelfths       { width: 83.3333333% !important; }
+
+	/**
+	 * Eighths.
+	 */
+	.#{$prefix}one-eighth         { width: 12.5% !important; }
+	.#{$prefix}three-eighths      { width: 37.5% !important; }
+	.#{$prefix}five-eighths       { width: 62.5% !important; }
+	.#{$prefix}seven-eighths      { width: 87.5% !important; }
+
+	/**
+	 * Ninths.
+	 */
+	.#{$prefix}one-ninth          { width: 11.1111111% !important; }
+	.#{$prefix}two-ninths         { width: 22.2222222% !important; }
+	.#{$prefix}four-ninths        { width: 44.4444444% !important; }
+	.#{$prefix}five-ninths        { width: 55.5555555% !important; }
+	.#{$prefix}seven-ninths       { width: 77.7777777% !important; }
+	.#{$prefix}eight-ninths       { width: 88.8888888% !important; }
+
+	/**
+	 * Tenths.
+	 */
+	.#{$prefix}one-tenth          { width: 10% !important; }
+	.#{$prefix}three-tenths       { width: 30% !important; }
+	.#{$prefix}seven-tenths       { width: 70% !important; }
+	.#{$prefix}nine-tenths        { width: 90% !important; }
+
+	/**
+	 * Twelfths.
+	 */
+	.#{$prefix}one-twelfth        { width:  8.3333333% !important; }
+	.#{$prefix}five-twelfths      { width: 41.6666666% !important; }
+	.#{$prefix}seven-twelfths     { width: 58.3333333% !important; }
+	.#{$prefix}eleven-twelfths    { width: 91.6666666% !important; }
+}
+
+@mixin widths($prefix: '') {
+
+	@if ($prefix != '') {
+		$prefix: $prefix + '-';
+	}
+
+	@if ($use-fractions) {
+		@include widths-fractions($prefix);
+	} @else {
+		@include widths-named($prefix);
+	}
+}
+
+/*------------------------------------*\
+    #WIDTHS-RESPONSIVE
+\*------------------------------------*/
+
+/**
+ * Responsive width classes based on your responsive settings.
+ */
+
+@include widths();
+
+//@if $use-fractions == false {
+
+	@each $prefix, $condition in $breakpoints {
+
+		// This isn’t ideal, but we definitely don’t want to generate widths
+		// for retina devices. Exclude retina media-qeuries manually.
+		@if ($prefix != "retina") {
+
+			@include media-query($condition) {
+
+				@include widths($prefix);
+
+			} // Close media query.
+
+		} // Close retina check.
+
+	} // Close breakpoints loop.
+
+//} // Close fractions @if.

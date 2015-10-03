@@ -1,0 +1,161 @@
+.footer {
+	background: $dark;
+	font-size: rem(14px);
+
+	// this hides a 1px line at the bottom of the page
+	padding-bottom: rem(20px);
+	margin-bottom: rem(-20px);
+
+	// this contains the margins of .content inside the .footer tag
+	overflow: hidden;
+
+	&, a {
+		color: white;
+	}
+
+	.title {
+		color: $white;
+	}
+
+	.error404 & {
+		display: none;
+	}
+
+	.widget__title {
+		@include query-below($lap) {
+			margin-bottom: rem(20px);
+		}
+	}
+}
+
+.footer.inverse * {
+	color: white;
+}
+
+@import "../vendor/font-awesome/variables.scss";
+
+.menu-social-menu-container,
+[class*="social-menu"] {
+
+	ul {
+		@extend .menu;
+		@extend .menu--inline;
+	}
+
+	a {
+		display: block;
+
+		// offset label to the right
+		position: relative;
+		overflow: hidden;
+
+		white-space: nowrap;
+		pointer-events: none;
+
+		margin: 0 rem(3px) rem(6px);
+		width: 32px;
+		height: 32px;
+
+		// hide label
+		color: transparent !important;
+
+		&:before {
+			content: "";
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			border-radius: 50%;
+
+			font-size: 17px;
+			line-height: 32px;
+			font-family: FontAwesome;
+			-webkit-font-smoothing: antialiased;
+			text-align: center;
+
+			// overwrite styles from parent element to make icon visible
+			pointer-events: auto;
+			background-color: white;
+			color: $dark;
+		}
+
+		// default share icon used as a fallback
+		&:before                        {content: $fa-var-share-alt;}
+		// now for the social services that are in FA
+		// we will match the href to them - left them looser so we don't have complaints
+		&[href*="mailto:"]:before,
+		&[href*="mail"]:before          {content: $fa-var-envelope;}
+		&[href*="feed"]:before,
+		&[href*="rss"]:before  			{content: $fa-var-rss;}
+		&[href*="behance"]:before       {content: $fa-var-behance;}
+		&[href*="delicious"]:before     {content: $fa-var-delicious;}
+		&[href*="deviantart"]:before    {content: $fa-var-deviantart;}
+		&[href*="digg"]:before          {content: $fa-var-digg;}
+		&[href*="dribbble"]:before      {content: $fa-var-dribbble;}
+		&[href*="facebook"]:before      {content: $fa-var-facebook;}
+		&[href*="flickr"]:before        {content: $fa-var-flickr;}
+		&[href*="foursquare"]:before    {content: $fa-var-foursquare;}
+		&[href*="github"]:before        {content: $fa-var-github;}
+		&[href*="plus.google"]:before   {content: $fa-var-google-plus;}
+		&[href*="instagram"]:before     {content: $fa-var-instagram;}
+		&[href*="linkedin"]:before      {content: $fa-var-linkedin;}
+		&[href*="pinterest"]:before     {content: $fa-var-pinterest;}
+		&[href*="reddit"]:before        {content: $fa-var-reddit;}
+		&[href*="skype"]:before         {content: $fa-var-skype;}
+		&[href*="soundcloud"]:before    {content: $fa-var-soundcloud;}
+		&[href*="spotify"]:before       {content: $fa-var-spotify;}
+		&[href*="stumbleupon"]:before   {content: $fa-var-stumbleupon;}
+		&[href*="tumblr"]:before        {content: $fa-var-tumblr;}
+		&[href*="twitter"]:before       {content: $fa-var-twitter;}
+		&[href*="vimeo"]:before         {content: $fa-var-vimeo-square;}
+		&[href*="vine"]:before          {content: $fa-var-vine;}
+		&[href*="vk.com"]:before        {content: $fa-var-vk;}
+		&[href*="weibo"]:before         {content: $fa-var-weibo;}
+		&[href*="xing"]:before          {content: $fa-var-xing;}
+		&[href*="yahoo"]:before         {content: $fa-var-yahoo;}
+		&[href*="youtube"]:before       {content: $fa-var-youtube;}
+		&[href*="angel.co"]:before       {content: $fa-var-angellist;}
+		&[href*="yelp"]:before       {content: $fa-var-yelp;}
+		&[href*="last.fm"]:before       {content: $fa-var-lastfm;}
+		&[href*="slideshare"]:before       {content: $fa-var-slideshare;}
+		&[href*="twitch.tv"]:before       {content: $fa-var-twitch;}
+	}
+
+	.is--ancient-android & {
+		a {
+			display: inline-block;
+			position: relative;
+			width: auto;
+			height: auto;
+			color: white !important;
+			white-space: normal;
+			margin-right: 10px;
+		}
+
+		a:before {
+			position: static;
+			height: auto;
+			width: auto;
+			padding-left: 5px;
+			padding-right: 5px;
+			margin-right: 10px;
+			border-radius: 0;
+		}
+
+		a:after{
+			content: none;
+			display: none;
+		}
+	}
+
+	.is--ie-mobile & {
+		a:before {
+			border-radius: 5px;
+		}
+	}
+}
+
