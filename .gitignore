@@ -1,0 +1,88 @@
+._.DS_Store
+._.TemporaryItems
+.DS_Store
+.ftpquota
+.htaccess
+favicon.ico
+images/
+js/
+wp/*
+!wp/wp-content/themes/mies-child/functions.php
+!wp/wp-content/themes/mies-child/header.php
+!wp/wp-content/themes/mies-child/style.css
+#wp/._.DS_Store
+#wp/.DS_Store
+#wp/.htaccess
+#wp/error_log
+#wp/index.php
+#wp/license.txt
+#wp/readme.html
+#wp/README.md
+#wp/wp-activate.php
+#wp/wp-blog-header.php
+#wp/wp-comments-post.php
+#wp/wp-config-sample.php
+#wp/wp-config.php
+#wp/wp-cron.php
+#wp/wp-links-opml.php
+#wp/wp-load.php
+#wp/wp-login.php
+#wp/wp-mail.php
+#wp/wp-settings.php
+#wp/wp-signup.php
+#wp/wp-trackback.php
+#wp/xmlrpc.php
+#wp/wp-admin/
+#wp/wp-content/upgrade/
+#wp/wp-content/uploads/
+#wp/wp-content/themes/mies/assets/fonts/
+#wp/wp-content/themes/mies/assets/images/
+#wp/wp-content/themes/mies/languages/
+#wp/wp-content/themes/mies/licensing/
+#wp/wp-content/themes/mies/LICENSE/
+#wp/wp-content/themes/mies/screenshot.php
+#wp/wp-includes/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
