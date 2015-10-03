@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Malsam Tsang Structural Engineering</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link href="../css/normalize.css" rel="stylesheet" media="all"> -->
+  <link href="css/style.css" rel="stylesheet" media="all">
+  <!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
+  <!--[if lt IE 9]> <html class="no-js weak" lang="en"> <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <html class="no-js" lang="en">
+  <!--<![endif]-->
+</head>
+
+<body>
+  <div id="page-wrap">
+    <header role="banner">
+      <div class="section group span_5_of_5">
+        <img id="logo" alt="Malsam Tsang Structural Engineering" src="images/mt-horiz-logo-467x69.png">
+        <div id="message">
+          <h2>
+            <em>A new site is on its way.</em> In the meantime, take a look <br class="r-br"> at our work in person.</h2>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      <div id="map_wrapper" class="section">
+        <div id="map_canvas" class="mapping"></div>
+      </div>
+
+      <img id="project-images" src="images/responsive-img.jpg" />
+      <img id="project-images-small" src="images/responsive-img-small.jpg" />
+    </main>
+
+    <footer role="contentinfo">
+      <div class="section group span_5_of_5">
+        <ol class="col span_5_of_5">
+          <li class="col span-footer-find">
+            <a class="footer-link" href="https://www.google.com/maps/place/122+S+Jackson+St,+Seattle,+WA+98104">
+              <div class="footer-sprite footer-sprite-pin"></div>
+              <div class="address">
+                <p>122 S Jackson St
+                  <br /> Suite 210
+                  <br /> Seattle, WA 98104</p>
+              </div>
+            </a>
+          </li>
+          <li class="col span-footer-contact">
+            <div class="footer-sprite footer-sprite-phone"></div>
+            <h3 class="footer-content">Contact Us</h3>
+            <p>206.789.6038</p>
+            <!-- <p>info@malsam-tsang.com</p> -->
+          </li>
+          <li class="col span-footer-in">
+            <a class="footer-link" href="https://www.linkedin.com/company/malsam-tsang-structural-engineering">
+              <div class="footer-sprite footer-sprite-in"></div>
+              <h3 class="footer-content">View our
+                <br /> LinkedIn profile</h3>
+            </a>
+          </li>
+        </ol>
+        <div class="copyright">
+          <small>Copyright &copy;
+            <time datetime="2015">2015</time>
+          </small>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- build:js scripts/vendor.min.js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- endbuild -->
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-66041118-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <script>
+    jQuery(function($) {
+      // Asynchronously Load the map API
+      var script = document.createElement('script');
+      script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+      document.body.appendChild(script);
+    });
+
+    var map;
+
+    function initialize() {
+      var bounds = new google.maps.LatLngBounds();
+      var mapOptions = {
+        mapTypeId: 'roadmap'
+      };
+
+      // Display a map on the page
+      map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+      map.setTilt(45);
+
+      // Multiple Markers
+      var markers = [
+        ['1000 S Henderson St, Seattle, WA', 47.5230813, -122.3202665],
+        // ['6209 21st Street NE, Tacoma, WA ',47.275968,-122.364965],
+        ['SW 100th St & 13th Ave SW, Seattle, WA', 47.5137368, -122.3514049],
+        ['521 2nd Ave W, Seattle, WA', 47.6239592, -122.3597038],
+        ['1806 23rd Ave, Seattle, WA', 47.617948, -122.30223],
+        ['4047 8th Ave NE, Seattle, WA', 47.656954, -122.32012],
+        ['121 12th Ave E, Seattle, WA', 47.619403, -122.317315],
+        ['750 11th Ave, Seattle, WA', 47.6079204, -122.3180453],
+        ['8727+8731 Phinney Ave N, Seattle, WA', 47.693314, -122.354334],
+        ['2418 NW 58th St,Seattle, WA', 47.6711214, -122.3885014],
+        ['2651 NW 56th St, Seattle, WA', 47.6694569, -122.3919955],
+        ['511 W Kinnear Pl, Seattle, WA', 47.62751, -122.363837],
+        ['2609 W Dravus St, Seattle, WA', 47.6486924, -122.3903653],
+        ['3051 25th Ave W, Seattle, WA', 47.6472494, -122.3888305],
+        ['2821 11th Ave E, Seattle, WA', 47.646298, -122.3183409],
+        ['2360 W Commodore Way, Seattle, WA 98199', 47.6614945, -122.3871455],
+        ['2630 W Commodore Way, Seattle', 47.6622387, -122.3909184],
+        ['7525 SE 24th St, Mercer Islannd, WA', 47.5887592, -122.238603],
+        ['4449 California Ave SW, Seattle', 47.563353, -122.3870595],
+        ['1923 7th Ave, Seattle, WA', 47.6147766, -122.3373639],
+        ['2420 Wickstrom Pl SW, Seattle', 47.5819721, -122.4019081],
+        ['4605 Lake Washington Blvd, Kirkland, WA 98033', 47.6497573, -122.2038429],
+        ['9049 NE Juanita Dr, Kirkland', 47.704534, -122.219526],
+        ['214 + 230 4th Ave, Kirkland, WA', 47.678319, -122.2050854],
+        ['1115 McGilvra Blvd East, Seattle, WA', 47.629065, -122.281778],
+        ['1409 42nd Ave E, Seattle, WA', 47.631326, -122.278974],
+        ['9628 Hilltop Road, Bellevue, WA', 47.620868, -122.212632],
+        ['Lot 30, Grand Ridge Drive, Issaquah, WA', 47.5427029, -121.9800723],
+        ['3075 70th Ave SE, Mercer Island, WA', 47.582025, -122.245485],
+        ['6531 NE Windermere Road, Seattle', 47.670615, -122.255947],
+        // ['8610 NE 17th St, Clyde Hill, WA',47.626347,-122.225512],
+        // ['11105 Eagle Creek Road, Leavenworth, WA',47.6343614,-120.6292315],
+        // ['2104 92nd Ave NE, Clyde Hill, WA',47.629378,-122.2166031],
+        ['1215 Lexington Ave E, Seattle, WA 98112', 47.630363, -122.288407],
+        ['Grand Ridge Drive, Issaquah, WA', 47.5427029, -121.9800723],
+        // ['North Rim, Phase 5, Lot 116, Bend, OR',44.0581728,-121.3153096],
+        // ['1165 Willems Rd, Cashmere, WA  98815',47.5169799,-120.574039],
+        ['6800 Greenwood Ave N, Seattle, WA', 47.6787609, -122.3552825],
+        ['743 N 35th St, Seattle, WA', 47.649935, -122.3480301],
+        ['4400 SW Alaska St, Seattle, WA', 47.561338, -122.388597],
+        ['1601 N 45th St, Seattle, WA', 47.6612442, -122.3384045],
+        // ['22325 MarineView Drive South, Des Moines, WA 98198',47.400996,-122.324908],
+        ['23716 56th Ave W, Mountlake Terrace, WA', 47.7835945, -122.3084251],
+        ['1203 E Spruce St, Seattle', 47.6035049, -122.3166854],
+        ['6301 15th Ave NW, Seattle,  WA', 47.6747516, -122.3764668],
+        ['205 Lake Street, Kirkland, WA', 47.6737748, -122.2060479],
+        ['2236 38th Place E, Seattle, WA 98112', 47.63908, -122.283574],
+        ['2414, 2418 55th Ave SW, Seattle, WA', 47.58172, -122.402333],
+        ['418 NW Market Street, Seattle, WA', 47.6686645, -122.3623143],
+        ['2017 E Spruce St, Seattle, WA', 47.603296, -122.305438],
+        ['844 NE 69th St, Seattle, WA', 47.6789593, -122.317879],
+        ['155 17th Ave, Seattle, WA', 47.6028202, -122.3101939],
+        ['3827, 3833, 3855 Evanston Ave N, Seattle, WA', 47.6537023, -122.3512965],
+        ['507 22nd Ave, Seattle, WA', 47.606516, -122.304063],
+        ['1436 NW 62nd St, Seattle, WA', 47.674043, -122.375309],
+        ['4039 8th Ave NE, Seattle, WA 98105', 47.656718, -122.320121],
+        ['4710 11th Ave NE, Seattle, WA', 47.6634905, -122.3160979],
+        ['4519 + 4523 18th Ave NE, Seattle', 47.6619497, -122.3086932],
+        ['18234 & 18248 73rd Ave NE, Kenmore, WA 98028', 47.761865, -122.243161],
+        ['4204 S Trenton St, Seattle', 47.5244178, -122.2805585],
+        ['2960 76th Ave SE, Mercer Island, WA', 47.582581, -122.236885],
+        ['16231-35 NE 12th Pl, Bellevue, WA 98008', 47.6205292, -122.1218406],
+        ['129th Ave SE, New Castle, WA 98056', 47.5312399, -122.166449],
+        ['4041 + 4049 129th Pl SE, Bellevue', 47.5727729, -122.1659366],
+        ['3806 + 3812 Fremont Ave N', 47.653188, -122.349527],
+        ['2005 E Denny Way, Seattle', 47.6184875, -122.3054003],
+        ['1935 42nd Ave E, Seattle, WA', 47.636832, -122.278801],
+        ['8080 169th Ave NE, Redmond, WA', 47.675935, -122.114758],
+        ['321-329 W Olympic Pl, Seattle, WA', 47.6267197, -122.3619293],
+        ['1622 E Yesler Way, Seattle', 47.601936, -122.310659],
+        ['1412 E Mercer St, Seattle', 47.624412, -122.3139069],
+        ['2603 E Thomas St, Seattle', 47.621154, -122.298314],
+        ['418 W Barrett St, Seattle', 47.6467942, -122.3631433],
+        ['3515+3519 Walingford Ave N, Seattle, WA', 47.649833, -122.336698],
+        ['7018 California Ave SW, Seattle, WA', 47.540178, -122.386803],
+        ['2556 14th Ave W, Seattle, WA', 47.6424609, -122.3745649],
+        ['728/732 Boylston Ave E, Seattle, WA', 47.62615, -122.323191],
+        ['1623 14th Ave, Seattle, WA', 47.616026, -122.314649],
+        ['1144 10th Ave E, SeattleWA', 47.629926, -122.319887],
+        ['5555 Phinney Ave N, Seattle, WA', 47.669313, -122.354912],
+        ['2847 Franklin Ave E, Seattle, WA', 47.6469364, -122.3238151],
+        ['4319 Woodland Park Ave N, Seattle, WA', 47.660205, -122.344898],
+        ['3918 1st Ave NE, Seattle, WA', 47.654312, -122.327573],
+        ['1761 NW 59th St, Seattle, WA', 47.671407, -122.381555],
+        ['410 12th Ave E, Seattle, WA', 47.622331, -122.316446],
+        ['414 12th Ave E, Seattle, WA', 47.622468, -122.316444],
+        ['1725 Bradner Pl S, Seattle', 47.587505, -122.2962868],
+        ['1705 Walnut Ave SW, Seattle, WA ', 47.5876857, -122.3821449],
+        ['707 94th Ave SE, Belleve, WA 98004', 47.603363, -122.213055],
+        ['1700 99th Ave NE, Bellevue, WA', 47.625509, -122.208735],
+        ['1124 Sunset Ave SW, Seattle', 47.592585, -122.386876],
+        ['Harrison Dr, Issaquah, WA', 47.5471695, -121.9879113],
+        ['2121 Sunset Ave SW, Seattle 98116', 47.585035, -122.395537],
+        // ['5872 Deer Harbor Road, Eastwood, WA',47.7510741,-120.7401386],
+        ['169 E Lake Sammamish Parkway SE, Sammamish, WA', 47.607861, -122.07426],
+        ['64064 E Mercer Way, Mercer Island, WA', 47.5521387, -122.2139881],
+        ['2429 8th Ave N,  Seattle, WA', 47.6404415, -122.3433941],
+        ['6612 8th Ave NE, Seattle, WA', 47.67702, -122.319799],
+        ['1718 14th Ave,  Seattle, WA', 47.617052, -122.313759],
+        ['227 23rd Ave E,  Seattle, WA', 47.621011, -122.302835],
+        ['2321 S Holgate St,  Seattle, WA', 47.5862, -122.3019892],
+        ['11219 Greenwood Ave N,  Seattle, WA', 47.711193, -122.35591],
+        ['5806 14th Ave NW,  Seattle, WA', 47.671194, -122.373173],
+        ['811-815 NW 53rd St,  Seattle, WA', 47.6671712, -122.3670612],
+        ['1121 N 92nd St,  Seattle, WA', 47.6954137, -122.3435218],
+        ['7762 Highland Park Way SW,  Seattle, WA', 47.532837, -122.346429],
+        ['90 E Newton St,  Seattle, WA', 47.6369344, -122.3275803],
+        ['208 25th Ave E,  Seattle, WA', 47.620557, -122.299498],
+        ['106 19th Ave E,  Seattle, WA', 47.618757, -122.307016],
+        ['1108 10th Ave E,  Seattle, WA', 47.6289789, -122.3198948],
+        ['607 Malden Ave E,  Seattle, WA', 47.624553, -122.313911],
+        ['1923 10th Ave W,  Seattle, WA', 47.636639, -122.370739],
+        ['1730 NW 60th St,  Seattle, WA', 47.6724762, -122.3802184],
+        ['205 13th Ave E,  Seattle, WA', 47.620115, -122.315907],
+        ['3637 13th Ave W,  Seattle, WA', 47.6532942, -122.3739978],
+        ['3212 W Government Way,  Seattle, WA', 47.660282, -122.398938],
+        ['3711 W Commodore Way,  Seattle, WA', 47.6660154, -122.4064556],
+        ['3718 W Lawton Street,  Seattle, WA', 47.665489, -122.406319],
+        ['418 19th Ave E,  Seattle, WA', 47.6228376, -122.3073012],
+        ['3427 22nd Ave W,  Seattle, WA', 47.651169, -122.385053],
+        ['4212 Fremont Ave N,  Seattle, WA', 47.658183, -122.349662],
+        ['2119 94th Ave NE,  Seattle, WA', 47.629996, -122.216527],
+        ['8650 NE 7th St,  Seattle, WA', 47.617194, -122.222898],
+        ['3608 1st Ave NW,  Seattle, WA', 47.653311, -122.357328],
+        ['221 24th Ave NE,  Seattle, WA', 47.6040093, -122.301099],
+        ['3621 Courtland Pl S,  Seattle, WA', 47.5708973, -122.2875065],
+        ['3629 Courtland Pl S,  Seattle, WA', 47.570664, -122.2875157],
+        ['3633 Courtland Pl S,  Seattle, WA', 47.5705268, -122.2875221],
+        ['8080 169th Ave NE,  Seattle, WA', 47.75185, -122.2831248],
+        ['2600 Franklin Ave E,  Seattle, WA', 47.6433589, -122.324254],
+        ['2556 14th Ave W,  Seattle, WA', 47.6424609, -122.3745649],
+        ['327 N 48th St.,  Seattle, WA', 47.663372, -122.354185],
+        ['5027 Bowen Pl S,  Seattle, WA', 47.556218, -122.277842],
+        ['3407 36th Ave W,  Seattle, WA', 47.6507037, -122.4036233],
+        ['9748 Densmore Ave N,  Seattle, WA', 47.7009533, -122.3373502],
+        ['9752 Densmore Ave N,  Seattle, WA', 47.701053, -122.337346],
+        ['2032 41st Ave E,  Seattle, WA', 47.63798, -122.279294],
+        ['2816 Lake Washington Blvd,  Seattle, WA', 47.6176602, -122.2815679],
+        ['2822 Lake Washington Blvd.,  Seattle, WA', 47.6176602, -122.2815679],
+        ['2828 Lake Washington Blvd.,  Seattle, WA', 47.6176602, -122.2815679],
+        ['8749 1st Ave NW,  Seattle, WA', 47.694087, -122.358399],
+        ['2215 Boylston Ave E,  Seattle, WA', 47.6387432, -122.3238206],
+        ['3627 Densmore Ave N,  Seattle, WA', 47.651292, -122.337876],
+        ['7008 Ravenna Ave NE,  Seattle, WA', 47.6797479, -122.30358],
+        ['4503 45th Ave SW ,  Seattle, WA', 47.5207629, -122.3905569],
+        ['310 19th AvE,  Seattle, WA', 47.6046853, -122.3076281],
+        ['2705 47th Ave SW,  Seattle, WA', 47.5791819, -122.391975],
+        ['2701 NE 91st St,  Seattle, WA', 47.6945989, -122.298402],
+        ['5004 Ivanhoe Pl NE,  Seattle, WA', 47.6650782, -122.26958],
+        ['5002 Ivanhoe Pl NE,  Seattle, WA', 47.665051, -122.269109],
+        ['605 22nd Ave E,  Seattle, WA', 47.624653, -122.303885],
+        ['521 N 76th St,  Seattle, WA', 47.683799, -122.351459],
+        ['6537 40th Ave SW,  Seattle, WA', 47.5438343, -122.3835383],
+        ['4100 40th Ave SW,  Seattle, WA', 47.566338, -122.382417],
+        ['3935 SW Southern St,  Seattle, WA', 47.5299194, -122.3835851],
+        ['2151 5th Ave W,  Seattle, WA', 47.639288, -122.36401],
+        ['800 W. Fulton St.,  Seattle, WA', 47.646106, -122.367719],
+        ['3950 S Juneau ST,  Seattle, WA', 47.549938, -122.281271],
+        ['1623 24th Ave,  Seattle, WA', 47.6160357, -122.3013898],
+        ['2134 44th Ave SW,  Seattle, WA', 47.58431, -122.387356],
+        ['5545 S Orcas St,  Seattle, WA', 47.550831, -122.262784],
+        ['2817 11th Ave E,  Seattle, WA', 47.6461924, -122.3187102],
+        ['2315 29th Ave S,  Seattle, WA', 47.5823771, -122.2951338],
+        ['4107 SW Thistle St,  Seattle, WA', 47.528269, -122.385202],
+        ['7010 23rd Ave NW,  Seattle, WA', 47.6798675, -122.3853448],
+        ['7008 23rd Ave NW,  Seattle, WA', 47.6797997, -122.3853448],
+        ['7002 23rd Ave NW,  Seattle, WA', 47.6795962, -122.3853449],
+        ['7000 23rd Ave NW Seattle, WA', 47.679797, -122.385042],
+        ['1525 19th Ave,  Seattle, WA', 47.61493, -122.307856],
+        ['122 27th Ave E,  Seattle, WA', 47.6195949, -122.296888],
+        ['3331 Lakewood Ave S ,  Seattle, WA', 47.5724309, -122.2818085],
+        ['3003 S. Judkins St. ,  Seattle, WA', 47.5919837, -122.2931135],
+        ['3043 NW 69th ST,  Seattle, WA', 47.678502, -122.397536],
+        ['5737 29th Ave NE,  Seattle, WA', 47.6714733, -122.2962246],
+        ['5735 29th Ave NE,  Seattle, WA', 47.671421, -122.296602],
+        ['321 NE 56th St,  Seattle, WA', 47.669116, -122.324559],
+        ['4723 9th Ave NE,  Seattle, WA', 47.66381, -122.318726],
+        ['4719 9th Ave NE,  Seattle, WA', 47.663701, -122.318727],
+        ['4715 9th Ave NE,  Seattle, WA', 47.6635909, -122.318728],
+        ['5020 SW 97th St,  Seattle, WA', 47.5169983, -122.3969656],
+        ['5122 S. Angeline St,  Seattle, WA', 47.5594402, -122.2685598],
+        ['9615 50th Ave SW,  Seattle, WA', 47.5172656, -122.3964674],
+        ['911 29th Ave S,  Seattle, WA', 47.5940889, -122.295769],
+        ['923 29th Ave S,  Seattle, WA', 47.593883, -122.295774],
+        ['1721 NW 65th St,  Seattle, WA', 47.6759784, -122.3798691],
+        ['6551 34th Ave SW,  Seattle, WA', 47.543143, -122.375491],
+        ['6547 34th Ave SW,  Seattle, WA', 47.543276, -122.375488],
+        ['6533 34th Ave SW,  Seattle, WA', 47.543696, -122.375479],
+        ['2708 45th Ave SW,  Seattle, WA', 47.579025, -122.388904],
+        ['2710 45th Ave SW,  Seattle, WA', 47.5789547, -122.3892991],
+        ['4447 41st Ave SW,  Seattle, WA', 47.563297, -122.384531],
+        ['8215 Greenwood Ave N,  Seattle, WA', 47.6888823, -122.3557466],
+        ['5550 Greenwood Ave N, Seattle, WA', 47.6691224, -122.3553337],
+        ['5554 Greenwood Ave N,  Seattle, WA', 47.6692853, -122.3553317],
+        ['9727 Woodlawn Ave N,  Seattle, WA', 47.700537, -122.339072],
+        ['1801 S Jackson St,  Seattle, WA', 47.5992143, -122.3278165],
+        ['4505 15th Ave S,  Seattle, WA', 47.5634121, -122.3135416],
+        ['4509 15th Ave S,  Seattle, WA', 47.56314, -122.313924],
+        ['9516 26th Ave NW,  Seattle, WA', 47.698285, -122.389095],
+        ['1512 NW 62nd St,  Seattle, WA', 47.674045, -122.37691],
+        ['2414 NW 62nd St,  Seattle, WA', 47.674059, -122.388496],
+        ['718 25th Ave S,  Seattle, WA', 47.596151, -122.299612],
+        ['6508 39th Ave NE,  Seattle, WA', 47.6760845, -122.2859414],
+        ['3904 NE 65th St,  Seattle, WA', 47.6757965, -122.2856392],
+        ['1919 8th Ave W,  Seattle, WA', 47.636578, -122.368064],
+        ['2340 NE 127th St.,  Seattle, WA', 47.721478, -122.30278],
+        ['2342 NE 127th St.,  Seattle, WA', 47.721142, -122.3026789],
+        ['2344 NE 127th St.,  Seattle, WA', 47.7211417, -122.3025757],
+        ['2338 NE 127th St.,  Seattle, WA', 47.7211425, -122.3028481],
+        ['705 18th Ave S,  Seattle, WA', 47.596335, -122.309353],
+        ['1909 41st Ave SW ,  Seattle, WA', 47.5864632, -122.3837265],
+        ['1911 41st Ave SW,  Seattle, WA', 47.586405, -122.38433],
+        ['505 30th Ave,  Seattle, WA', 47.6064, -122.294018],
+        ['500 30th Ave,  Seattle, WA', 47.6061802, -122.2936626],
+        ['50X 30th Ave,  Seattle, WA', 47.6016603, -122.293717],
+        ['116 20th Ave,  Seattle, WA', 47.6021645, -122.3063321],
+        ['120 20th Ave,  Seattle, WA', 47.602303, -122.305958],
+        ['1407 19th Ave,  Seattle, WA', 47.613268, -122.30789],
+        ['104 29th Ave S,  Seattle, WA', 47.6014805, -122.2949143],
+        ['110 29th Ave S. ,  Seattle, WA', 47.6013741, -122.2949178],
+        ['4107 SW Oregon St,  Seattle, WA', 47.5626869, -122.384653],
+        ['5735 29th Ave NE,  Seattle, WA', 47.671421, -122.296602],
+        ['1936 8th Ave W,  Seattle, WA', 47.63703, -122.367271],
+        ['1529 44th Ave SW,  Seattle, WA', 47.589677, -122.387951],
+        ['10449 Alderbrook Pl NW,  Seattle, WA', 47.704839, -122.365508],
+        ['104 22nd Ave S,  Seattle, WA', 47.6013469, -122.303442],
+        ['118 27th Ave E,  Seattle, WA', 47.61943, -122.296888],
+        ['6719 23rd Ave NW,  Seattle, WA', 47.678344, -122.385694],
+        ['6723 23rd Ave NW,  Seattle, WA', 47.678422, -122.3853729],
+        ['2133 Dexter Ave N,  Seattle, WA', 47.638476, -122.344219],
+        ['118 27th Ave E,  Seattle, WA', 47.61943, -122.296888],
+        ['1118 24th Ave S,  Seattle, WA', 47.5922328, -122.3010727],
+        ['7500 15th Ave NW,  Seattle, WA', 47.6833477, -122.376457],
+        ['2112 13th Ave S,  Seattle, WA', 47.584132, -122.3156195],
+        ['212 16th Ave,  Seattle, WA', 47.603941, -122.310918],
+        ['1614 24th Ave,  Seattle, WA', 47.61581, -122.301013],
+        ['2648 NW 62nd St,  Seattle, WA', 47.6738527, -122.3908163],
+        ['2651 NW 63rd St - SFR,  Seattle, WA', 47.6062095, -122.3320708],
+        ['2709 14th Ave S,  Seattle, WA', 47.5792, -122.315031],
+        ['2107 14th Ave S,  Seattle, WA', 47.5842869, -122.3147107],
+        ['117 17th Ave E,  Seattle, WA', 47.619067, -122.310514],
+        ['112-116 16th Ave,  Seattle, WA', 47.602227, -122.311176],
+        ['2401 14th Ave S,  Seattle, WA', 47.581739, -122.315084],
+        ['210 16th Ave,  Seattle, WA', 47.603885, -122.3112453],
+        ['1507 E Spruce St,  Seattle, WA', 47.60336, -122.3124431],
+        ['831 29th Ave S,  Seattle, WA', 47.5948769, -122.295756],
+        ['2116 10th Ave W,  Seattle, WA', 47.6383122, -122.3698374],
+        ['2609 E Thomas St,  Seattle, WA', 47.621153, -122.298071],
+        ['2603 E Thomas St,  Seattle, WA', 47.621154, -122.298314],
+        ['2124 10th Ave W,  Seattle, WA', 47.6384649, -122.369927],
+        ['1942 10th Ave W,  Seattle, WA', 47.6371775, -122.3699482],
+        ['2381 Beacon Ave S,  Seattle, WA', 47.5818714, -122.3149669],
+        ['7121 38th Ave SW,  Seattle, WA', 47.5391893, -122.380296],
+        ['1402 NW 85th St,  Seattle, WA', 47.690837, -122.374347],
+        ['1202 N 143rd St,  Seattle, WA', 47.7326639, -122.3437743],
+        ['2164 Dexter Ave N,  Seattle, WA', 47.6394732, -122.3437677],
+        ['4471 Whitman Ave N,  Seattle, WA', 47.6612478, -122.3459829],
+        ['1412 20th Ave,  Seattle, WA', 47.613297, -122.305842],
+        ['215 Boylston Ave E,  Seattle, WA', 47.6203685, -122.3232913],
+        ['4101 SW Oregon St,  Seattle, WA', 47.5626869, -122.384421],
+        ['4038 California Ave SW,  Seattle, WA', 47.56726, -122.386378],
+        ['217 23rd Ave E,  Seattle, WA', 47.6207909, -122.302839],
+        ['708 11th Ave E,  Seattle, WA', 47.625556, -122.317702],
+        ['3024 4th Ave W,  Seattle, WA', 47.647401, -122.361815],
+        ['3014 4th Ave W,  Seattle, WA', 47.647144, -122.361812],
+        ['3802 13th Ave W,  Seattle, WA', 47.654161, -122.3732585],
+        ['3817 Gilman Ave W,  Seattle, WA', 47.6544602, -122.3852839],
+        ['3816 23rd Ave W,  Seattle, WA', 47.654546, -122.38566],
+        ['3818 23rd Ave W,  Seattle, WA', 47.6545896, -122.3859819],
+        ['722 Summit Ave E,  Seattle, WA', 47.6257364, -122.3250806],
+        ['725 Belmont Ave E,  Seattle, WA', 47.625702, -122.3248339],
+        ['1823 20th Ave,  Seattle, WA', 47.618356, -122.306471],
+        ['1917 Denny Way,  Seattle, WA', 47.6184401, -122.3292896],
+        ['3047 21st Ave W,  Seattle, WA', 47.647974, -122.383734],
+        ['750 11th Ave E,  Seattle, WA', 47.6262779, -122.3180379],
+        ['717 10th Ave E,  Seattle, WA', 47.625924, -122.320571],
+        ['1208 W Emerson St,  Seattle, WA', 47.6542488, -122.3728605],
+        ['6406 28th Ave NW,  Seattle, WA', 47.6754293, -122.3927532],
+        ['807 N 42nd St,  Seattle, WA', 47.657547, -122.34803],
+        ['426 26th Ave S,  Seattle, WA', 47.5984539, -122.29833],
+        ['418 26th Ave S,  Seattle, WA', 47.598617, -122.298325],
+        ['3219 California Ave SW,  Seattle, WA', 47.575048, -122.387147],
+        ['1711 NW 61st St,  Seattle, WA', 47.6728682, -122.3795294]
+      ];
+
+      // Display multiple markers on a map
+      var infoWindow = new google.maps.InfoWindow(),
+        marker, i;
+
+      // Loop through our array of markers & place each one on the map
+      for (i = 0; i < markers.length; i++) {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+          position: position,
+          map: map,
+          title: markers[i][0]
+        });
+
+        // Automatically center the map fitting all markers on the screen
+        map.fitBounds(bounds);
+      }
+
+      // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+      var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        this.setZoom(11);
+        google.maps.event.removeListener(boundsListener);
+
+      });
+    }
+  </script>
+
+</body>
+
+</html>
