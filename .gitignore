@@ -5,6 +5,7 @@
 .htaccess
 favicon.ico
 images/
+
 wp/*
 !wp/wp-content/
 wp/wp-content/*
