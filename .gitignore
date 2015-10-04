@@ -6,6 +6,7 @@
 favicon.ico
 images/
 
+#previous attempt
 # wp/*
 # !wp/wp-content/
 # wp/wp-content/*
