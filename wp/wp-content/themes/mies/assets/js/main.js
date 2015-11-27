@@ -10,8 +10,8 @@ var ua = navigator.userAgent,
     ieMobile = false,
     isSafari = false,
     isMac = false,
-    
-    
+
+
     // useful logs in the console
     globalDebug = false;
 
@@ -1263,10 +1263,10 @@ var ua = navigator.userAgent,
             heroOffset = $hero.offset(),
             adminBar = parseInt($html.css('marginTop')),
             amount = that.amount,
-            
-            
-            
-            
+
+
+
+
             // we may need to scale the image up or down
              // so we need to find the max scale of both X and Y axis
             scaleX, scaleY, scale, newWidth, distance, speeds = {
@@ -1318,8 +1318,8 @@ var ua = navigator.userAgent,
             paused: true
           })
         },
-            
-            
+
+
             // the container timeline
             parallax2 = {
             start: 0,
@@ -1544,8 +1544,8 @@ var ua = navigator.userAgent,
       var $sliderContainer = $(this),
           slider = $(this).data('royalSlider'),
           lastSlide = 0,
-          
-          
+
+
           // Sir Hackalot
           $sourceContent = $sliderContainer.closest('.hero__bg').data('source');
 
@@ -1859,8 +1859,8 @@ var ua = navigator.userAgent,
         rs_imageScale = $slider.data('imagescale') || "fill",
         rs_visibleNearby = typeof $slider.data('visiblenearby') !== "undefined",
         rs_imageAlignCenter = typeof $slider.data('imagealigncenter') !== "undefined",
-        
-        
+
+
         //rs_imageAlignCenter = false,
         rs_transition = typeof $slider.data('slidertransition') !== "undefined" && $slider.data('slidertransition') != '' ? $slider.data('slidertransition') : 'fade',
         rs_transitionSpeed = 500,
@@ -2258,8 +2258,8 @@ var ua = navigator.userAgent,
       $document = $(document),
       $html = $('html'),
       $body = $('body'),
-      
-      
+
+
       // needed for browserSize
       windowWidth = $window.width(),
       windowHeight = $window.height(),
@@ -2268,8 +2268,8 @@ var ua = navigator.userAgent,
       orientation = windowWidth > windowHeight ? 'landscape' : 'portrait',
       orientationChanged = false,
       headerHeight = $('.panel--logo').outerHeight(),
-      
-      
+
+
       // needed for requestAnimationFrame
       latestKnownScrollY = window.scrollY,
       lastKnownScrollY = latestKnownScrollY,
@@ -5941,7 +5941,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
  *  Contact   : jbdemonte@gmail.com
  *  Web site  : http://gmap3.net
  *  Licence   : GPL v3 : http://www.gnu.org/licenses/gpl.html
- *  
+ *
  *  Copyright (c) 2010-2014 Jean-Baptiste DEMONTE
  *  All rights reserved.
  */
@@ -13439,22 +13439,22 @@ added localStorage history so it will try and regenerate on back in browser
 ;
 (function (factory) {
   if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module. 
+    // AMD. Register as an anonymous module.
     define(['jquery'], factory);
   } else if (typeof exports === 'object') {
-    // Node/CommonJS 
+    // Node/CommonJS
     factory(require('jquery'));
   } else {
-    // Browser globals 
+    // Browser globals
     factory(window.jQuery || window.Zepto);
   }
 }(function ($) {
 
   /*>>core*/
   /**
-   * 
+   *
    * Magnific Popup Core JS file
-   * 
+   *
    */
 
 
@@ -13476,7 +13476,7 @@ added localStorage history so it will try and regenerate on back in browser
 
 
   /**
-   * Private vars 
+   * Private vars
    */
   var mfp, // As we have only one instance of MagnificPopup object, we define it locally to not to use 'this'
   MagnificPopup = function () {},
@@ -13525,8 +13525,8 @@ added localStorage history so it will try and regenerate on back in browser
       }
       return mfp.currTemplate.closeBtn;
       },
-      
-      
+
+
       // Initialize Magnific Popup only when called at least once
       _checkInstance = function () {
       if (!$.magnificPopup.instance) {
@@ -13535,8 +13535,8 @@ added localStorage history so it will try and regenerate on back in browser
         $.magnificPopup.instance = mfp;
       }
       },
-      
-      
+
+
       // CSS transition detection, http://stackoverflow.com/questions/7264899/detect-css-transitions-using-javascript-and-without-modernizr
       supportsTransitions = function () {
       var s = document.createElement('p').style,
@@ -13565,7 +13565,7 @@ added localStorage history so it will try and regenerate on back in browser
     constructor: MagnificPopup,
 
     /**
-     * Initializes Magnific Popup plugin. 
+     * Initializes Magnific Popup plugin.
      * This function is triggered only once when $.fn.magnificPopup or $.magnificPopup is executed
      */
     init: function () {
@@ -14385,7 +14385,7 @@ added localStorage history so it will try and regenerate on back in browser
       options = $.extend(true, {}, options);
 
 /*
-		 * As Zepto doesn't support .data() method for objects 
+		 * As Zepto doesn't support .data() method for objects
 		 * and it works only in normal browsers
 		 * we assign "options" object directly to the DOM element. FTW!
 		 */
@@ -14701,10 +14701,10 @@ console.log('Test #2:', performance.now() - start);
       getImage: function (item, template) {
 
         var guard = 0,
-            
-            
-            
-            
+
+
+
+
             // image load complete handler
             onLoadComplete = function () {
             if (item) {
@@ -14734,10 +14734,10 @@ console.log('Test #2:', performance.now() - start);
               }
             }
             },
-            
-            
-            
-            
+
+
+
+
             // image error handler
             onLoadError = function () {
             if (item) {
@@ -14900,7 +14900,7 @@ console.log('Test #2:', performance.now() - start);
                   animatedImg.remove();
                   image = animatedImg = null;
                   _mfpTrigger('ZoomAnimationEnded');
-                }, 16); // avoid blink when switching images 
+                }, 16); // avoid blink when switching images
               }, duration); // this timeout equals animation duration
             }, 16); // by adding this timeout we avoid short glitch at the beginning of animation
 
@@ -14973,7 +14973,7 @@ console.log('Test #2:', performance.now() - start);
 
 
 /*
-			
+
 			Animating left + top + width/height looks glitchy in Firefox, but perfect in Chrome. And vice-versa.
 
 			 */
@@ -15004,8 +15004,8 @@ console.log('Test #2:', performance.now() - start);
 
   var IFRAME_NS = 'iframe',
       _emptyPage = '//about:blank',
-      
-      
+
+
       _fixIframeBugs = function (isShowing) {
       if (mfp.currTemplate[IFRAME_NS]) {
         var el = mfp.currTemplate[IFRAME_NS].find('iframe');
@@ -15392,11 +15392,11 @@ addSwipeGesture: function() {
    *
    * To unbind:
    * $('.your-el').destroyMfpFastClick();
-   * 
-   * 
+   *
+   *
    * Note that it's a very basic and simple implementation, it blocks ghost click on the same element where it was bound.
    * If you need something more advanced, use plugin by FT Labs https://github.com/ftlabs/fastclick
-   * 
+   *
    */
 
   (function () {

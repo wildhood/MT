@@ -188,6 +188,7 @@ return array(
 							<p><strong>Light</strong> style uses white text for dark background colors.</p>
 							<p><strong>Shadowed</strong> style add a transparent shadow behind the light text.</p>
 							<p><strong>Dark</strong> style uses black text for light background colors.</p>
+							<p><strong>Semi-dark</strong> style uses black text for with tint overlay and light background colors.</p>
 							"></a>', 'mies_txtd' ),
 						'desc'      => __( 'Select the style of the elements inside the hero area', 'mies_txtd' ),
 						'id'        => wpgrade::prefix() . 'header_content_style',
@@ -204,6 +205,10 @@ return array(
 							array(
 								'name' => __('Dark', 'mies_txtd'),
 								'value' => 'hero--dark'
+							),
+							array(
+								'name' => __('Semi-dark', 'mies_txtd'),
+								'value' => 'hero--semi-dark'
 							),
 						),
 						'std'       => 'hero--shadowed'
@@ -347,7 +352,8 @@ return array(
 						'std' => array(
 								1 => array(
 									'location_url' => "https://www.google.ro/maps/@51.5075586,-0.1284425,18z",
-									'name' => __('London', 'mies_txtd')
+									'name' => __('London', 'mies_txtd'),
+									'name_url' => "http://malsam-tsang.com",
 								)
 							)
 					),

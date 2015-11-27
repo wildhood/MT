@@ -61,7 +61,6 @@ if ( is_page() && get_page_template_slug( wpgrade::lang_post_id( get_the_ID() ) 
 				$comma = '';
 			}
 			$pins .= '"' . $pin['name'] . '":"' . $pin['location_url'] . '"' . $comma;
-			//$pins .= '"<a href="' . $pin['name_url'] . '">' . $pin['name'] . '</a>"' . '":"' . $pin['location_url'] . '"' . $comma;
 		}
 		$pins .= '}';
 		?>
