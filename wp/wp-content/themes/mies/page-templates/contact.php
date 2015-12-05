@@ -46,7 +46,7 @@ if ( post_password_required() && ! $wpgrade_private_post['allowed'] ) {
 			     addthis:title="<?php wp_title( '|', true, 'right' ) ?>"
 			     addthis:description="<?php echo esc_attr( trim( strip_tags( get_the_excerpt() ) ) ) ?>">
 			<?php get_template_part( 'templates/core/addthis-social-popup' ); ?>
-		</div>
+			</div>
 		<?php } ?>
 
 	<?php endwhile;

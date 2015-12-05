@@ -11,9 +11,6 @@ function mies_child_theme_setup() {
 /**
  * ===== Loading Resources =====
  * Add all the extra static resources of the child theme - right now only the style.css file
-
- * ===== Marks Notes =====
- * wp-content\themes\mies\config\wpgrade-config.php - is the location of the theme core font info
  */
 
 function mies_child_enqueue_styles() {

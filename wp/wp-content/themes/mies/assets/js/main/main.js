@@ -153,7 +153,7 @@ function loadUp() {
     if (globalDebug) {console.group("global::loadup");}
 
     resizeVideos();
-//    magnificPopupInit();
+    magnificPopupInit();
     isotopeInit();
 
     if(!Modernizr.touch)

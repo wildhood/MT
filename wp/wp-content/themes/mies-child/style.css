@@ -19,48 +19,6 @@ If you wish however, you can copy the whole style.css file from the parent here 
 In that case please remember that you still need to retain the header above (replace the header of the parent style.css with the one above),
 specifically the 'Template: hive' line. */
 
-/*css rules that are specific to Malsam-Tsang.com are labled "mdw..."*/
-
-/**
- * Table of contents
- * ------------------------
- *
- * 1.0 - Normalize
- * 2.0 - Reset
- * 3.0 - Base Styles
- *   3.1 - Shared
- *   3.2 - Typography
- *   3.3 - Images
- * 4.0 - Helpers
- * 5.0 - Layout
- * 6.0 - Patterns
- *   6.1 - Grid
- *   6.2 - Menu
- *   6.3 - Separators
- *   6.4 - Buttons
- *   6.5 - Pagination
- *   6.6 - Search form
- *   6.7 - Widgets
- *   6.8 - Video background
- *   6.9 - Contact form
- *   6.10 - Icons
- *   6.11 - GMap
- * 7.0 - Components
- *   7.1 - Header
- *   7.2 - Hero
- *   7.3 - Footer
- *   7.4 - Comments
- *   7.5 - Masonry items
- *   7.6 - Selected projects
- *   7.7 - Filter
- *   7.8 - Share overlay
- * 8.0 - Pages
- *   8.1 - Single
- *   8.2 - Blog
- * 9.0 - Vendor / plugins
- * 10.0 - Shortcodes
- * 0.0 - Shame
- */
 
 header#post-426-title {
     box-shadow: inset 0px 250px 2500px rgba(255, 255, 255, 0.8);
@@ -81,6 +39,15 @@ ul.masonry__item-meta li {
 		font-style: normal;
 		text-transform: uppercase;
 }
+
+/* -- modify this for future footer seprator on specific pages... if seperator wanted in footer area
+hr {
+	border: 0;
+	border-top: 1px solid #d7d7d7;
+	margin: 59px auto;
+	margin: 3.52941rem auto;
+}
+*/
 
 .footer {
 
@@ -116,6 +83,20 @@ ul.masonry__item-meta li {
 		letter-spacing: 0.06rem;
 }
 
+article#post-145 p {
+  margin: 0 0 0 0;
+}
+
+.profile--staff-photo{
+  margin:0 0 0 0;
+  padding:0 0 0 0;
+}
+
+.profile--staff-names {
+  margin:0 0 0 0;
+  padding: 0 0 0 0;
+}
+
 @media (min-width: 800px) {
 
 footer div#text-2 {
@@ -130,5 +111,6 @@ footer div#text-3 {
 div#nav_menu-3 {
 	padding-left: 0px;
 	margin-left: -10px;
+}
 
 }
