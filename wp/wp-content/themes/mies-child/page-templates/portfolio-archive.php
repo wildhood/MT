@@ -36,8 +36,6 @@ if ( post_password_required() && ! $wpgrade_private_post['allowed'] ) {
 
 } // close if password protection
 
-?>
-<div style='width:100%; height:40px; background-color:#899093;'><h1>okay, let's make this a map</h1></div>
-<?php
+get_template_part ( 'templates/mt-map' );
 
 get_footer();

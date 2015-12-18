@@ -84,7 +84,7 @@ function get_oldMap_coordinates(url) {
 var gmapInit = function ($element) {
 
 	var $gmaps 			= $element.find('.gmap'),
-		$imageMarkup 	= $('.js-map-pin').html(); //grabs the html with link to pin image - add another variable to call different pin types
+		$imageMarkup 	= $('.js-map-pin').html();
 
 	if ($gmaps.length && typeof google !== 'undefined') {
 		if (globalDebug) {
