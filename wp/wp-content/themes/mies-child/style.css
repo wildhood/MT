@@ -49,6 +49,12 @@ ul.masonry__item-meta li {
     right: 1.1rem;
 }
 
+body.page-id-118 div.hero__description {
+  margin-top: 36%;
+/*color: red;
+background-color: black;*/
+}
+
 /*modify map on portfolio archive*/
 
 div.gmap__marker--all-proj__undefined div.gmap__marker__btn {
@@ -81,7 +87,7 @@ div.gmap__marker--all-proj__featured img.gmap__marker__img {
 /*profile page specific*/
 
 .profile--staff-names {
-  margin:0 0 0 0;
+  margin: -1.6rem 0 1rem 0;
   padding: 0 0 0 0;
   font-family: lato, sans-serif;
   text-transform: uppercase;
@@ -90,6 +96,9 @@ div.gmap__marker--all-proj__featured img.gmap__marker__img {
   letter-spacing: .09rem;
 }
 
+.profile--staff-info {
+  line-height: .6rem;
+}
 
 /*modify footer appearance*/
 
