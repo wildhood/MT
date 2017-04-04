@@ -83,6 +83,13 @@ div.gmap__marker--all-proj__featured img.gmap__marker__img {
   width: 1.5rem;
 }
 
+div.gmap__marker--all-proj__featured div.gmap__marker__btn a:hover {
+  color: #0085c1;
+}
+
+.hero--map {
+  clear: both;
+}
 
 /*profile page specific*/
 
@@ -100,6 +107,16 @@ div.gmap__marker--all-proj__featured img.gmap__marker__img {
   line-height: .6rem;
 }
 
+.profile--headshots {
+  height: 170px;
+}
+
+/* @media not screen and (min-width: 800px) {
+	.profile--headshots {
+		color;
+		line-height: 1.7;
+	}
+*/
 /*modify footer appearance*/
 
 .footer {

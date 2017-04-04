@@ -1,4 +1,4 @@
-<div class="content  content--portfolio-archive">
+<div class="content  content--portfolio-archive"> <!-- onload="$(window).trigger('resize')"-->
 
 	<?php
 	// lets make sure we have the paging right
@@ -38,7 +38,7 @@
 		get_template_part('templates/portfolio/filter-box'); ?>
 
 		<div class="projects  projects--grid  masonry infinite_scroll infinite_scroll_with_button  <?php echo esc_attr( $projects_columns_class ); ?>" data-maxpages="<?php echo esc_attr( $the_query->max_num_pages ) ?>"
-			data-projects-per-page="<?php echo $projects_per_page; ?>" data-total-posts="<?php echo $the_query->found_posts; ?>">
+			data-projects-per-page="<?php echo $projects_per_page; ?>" data-total-posts="<?php echo $the_query->found_posts; ?>"> <!-- -->
 			<?php while ( $the_query->have_posts() ): $the_query->the_post();
 
 				get_template_part( 'templates/portfolio/content-portfolio' );
@@ -51,11 +51,9 @@
 		</div>
 
 		<div class="load-more__container align-center">
-      <!-- onclick="document.write('<?php// wp_enqueue_script('google-maps-api'); ?>');" -->
 			<a class="btn" href="#">
 				<span class="regular-text"><?php _e( 'Load More', 'mies_txtd' ); ?></span>
 				<span class="loading-text"><?php _e( 'Loading', 'mies_txtd' ); ?></span>
-				<!-- <img class="loading-img" alt="loading..." src="<?php //echo get_template_directory_uri() . '/assets/images/loader-puff.svg' ?>"> -->
         <img class="loading-img" alt="loading..." src="<?php echo get_template_directory_uri() . '/assets/images/loader-puff.svg' ?>">
 			</a>
 		</div>

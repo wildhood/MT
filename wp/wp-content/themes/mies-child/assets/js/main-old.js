@@ -158,7 +158,6 @@ var ua = navigator.userAgent,
   }
 
   function get_newMap_oldUrl_coordinates(url) {
-
     var coordinates = {},
         split, distance;
 
@@ -232,14 +231,13 @@ var ua = navigator.userAgent,
             links = {},
             gmap_style = typeof $gmap.data('customstyle') !== "undefined" ? "style1" : google.maps.MapTypeId.ROADMAP,
             pins = [],
-            zoom = 10,
+            zoom = 11,
             linksNumber = 0;
 
         links = $gmap.data('pins');
 
         $.each(links, function (label, url) {
           var coordinates;
-          var label_parts = label.split("; ")
           if (url) {
             coordinates = get_oldMap_coordinates(url);
             if (typeof variables == "undefined") {
@@ -249,12 +247,11 @@ var ua = navigator.userAgent,
               pins.push({
                 latLng: [coordinates.latitude, coordinates.longitude],
                 options: {
-                  content: '<div class="gmap__marker gmap__marker--all-proj__' + label_parts[1] + '"><div class="gmap__marker__btn">' + '<a href="http://malsam-tsang.com/wp/portfolio/' + label_parts[2] + '">' + label_parts[0] + '</a></div>' + $imageMarkup + '</div>'
+                  content: '<div class="gmap__marker"><div class="gmap__marker__btn">' + label + '</div>' + $imageMarkup + '</div>'
                 }
               });
               if (coordinates.zoom !== "undefined" && ++linksNumber === 1) {
-                zoom = 12;
-                // zoom = parseInt(coordinates.zoom);
+                zoom = parseInt(coordinates.zoom);
               }
             }
           }
@@ -269,7 +266,6 @@ var ua = navigator.userAgent,
           map: {
             options: {
               zoom: zoom,
-              center: [47.6097, -122.3331],  //set map center at seattle
               mapTypeId: gmap_style,
               mapTypeControl: false,
               panControl: true,
@@ -315,8 +311,7 @@ var ua = navigator.userAgent,
               }]
             }]
           }
-        // },"autofit");
-        });
+        }, "autofit");
 
         var map = $gmap.gmap3("get");
 
@@ -324,8 +319,7 @@ var ua = navigator.userAgent,
           if (typeof map == "undefined") return;
 
           if (1 < pins.length) {
-            map.setZoom(12); //to lock the zoom for large number of pins.
-            // map.setZoom(map.getZoom() - 1);
+            map.setZoom(map.getZoom() - 1);
           } else {
             map.setZoom(zoom);
           }
@@ -2042,6 +2036,14 @@ var ua = navigator.userAgent,
 
     $slider.addClass('slider--loaded');
   }
+
+/*
+* Resize page so that map repaints for new page DIMENSIONS
+*/
+
+/*if
+$(window).trigger('resize')
+*/
 
 /*
  * Wordpress Galleries to Sliders
@@ -18074,7 +18076,7 @@ var VideoBackground = {
     if (window.addEventListener) window.addEventListener('message', onVimeoMessageReceived, false);
     else window.attachEvent('onmessage', onVimeoMessageReceived, false);
 
-    // calling an initial fill() on videos
+    / / calling an initial fill() on videos
     this.fill();
   },
 

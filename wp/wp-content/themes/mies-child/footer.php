@@ -22,4 +22,7 @@
 <?php wp_footer(); ?>
 <div class="footer--copyright"><p>&#169; <?php $time = current_time( $type = Y, $gmt = 0 ); echo $time;  ?> Malsam Tsang Structural Engineering</p></div>
 </body>
+<script type="text/javascript">
+//jQuery(window).trigger('resize')
+</script>
 </html>

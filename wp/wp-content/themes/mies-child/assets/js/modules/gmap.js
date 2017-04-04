@@ -75,7 +75,7 @@ function get_oldMap_coordinates(url) {
 
 	coordinates.zoom = get_url_parameter('z', url);
 	if (typeof coordinates.zoom === "undefined") {
-		coordinates.zoom = 10;
+		coordinates.zoom = 14;
 	}
 
 	return coordinates;
@@ -97,7 +97,7 @@ var gmapInit = function ($element) {
 				links 		= {},
 				gmap_style 	= typeof $gmap.data('customstyle') !== "undefined" ? "style1" : google.maps.MapTypeId.ROADMAP,
 				pins 		= [],
-				zoom		= 10,
+				zoom		= 14,
 				linksNumber = 0;
 
 			links = $gmap.data('pins');
