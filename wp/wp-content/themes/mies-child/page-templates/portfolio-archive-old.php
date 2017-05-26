@@ -36,4 +36,6 @@ if ( post_password_required() && ! $wpgrade_private_post['allowed'] ) {
 
 } // close if password protection
 
+get_template_part ( 'templates/mt-map' );
+
 get_footer();

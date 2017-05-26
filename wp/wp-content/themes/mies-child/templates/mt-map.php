@@ -53,7 +53,6 @@ wp_enqueue_script('google-maps-api');
 				 "Sonny Goodin Residence":"https://www.google.com/maps/@47.5169799,-120.574039,14z",
 				 "#121 - 2821 11th Ave E (Lady Stardust)":"https://www.google.com/maps/@47.646298,-122.3183412,14z",
 				 "290 NW Dogwood St":"https://www.google.com/maps/@47.534059,-122.041576,14z",
-				 "531 Howe St":"https://www.google.com/maps/@47.635481,-122.346184,14z",
 				 "2005 E Denny Way  (The Angry Hawaiian II)":"https://www.google.com/maps/@47.6184873,-122.3054003,14z",
 				 "#150 - 1935 42nd Ave E (Mad Twins)":"https://www.google.com/maps/@47.636832,-122.278801,14z",
 				 "321-329 W Olympic Pl":"https://www.google.com/maps/@47.6267195,-122.3619293,14z",
@@ -64,7 +63,6 @@ wp_enqueue_script('google-maps-api');
 				 "418 W Barrett St":"https://www.google.com/maps/@47.6467942,-122.3631433,14z",
 				 "Alki 4 P-1 Rowhouses":"https://www.google.com/maps/@47.58172,-122.402333,14z",
 				 "#104 - 7018 California Ave SW (Morgan 5.2)":"https://www.google.com/maps/@47.540178,-122.386803,14z",
-				 "2429 8th Ave N":"https://www.google.com/maps/@47.6404415,-122.3433941,14z",
 				 "Kerala Townhomes":"https://www.google.com/maps/@47.761865,-122.243161,14z",
 				 "Greenbelt Station":"https://www.google.com/maps/@47.5244178,-122.2805585,14z",
 				 "Trellis - Mercer Island Townhomes":"https://www.google.com/maps/@47.582581,-122.236885,14z",
@@ -75,7 +73,6 @@ wp_enqueue_script('google-maps-api');
 				 "7500 15th Ave NW":"https://www.google.com/maps/@47.6833477,-122.376457,14z",
 				 "Project 1623 LLC":"https://www.google.com/maps/@47.616026,-122.314649,14z",
 				 "#115 - 1144 10th Ave E (8 on 10th)":"https://www.google.com/maps/@47.629926,-122.319887,14z",
-				 "2847 Franklin Ave E":"https://www.google.com/maps/@47.6469364,-122.3238151,14z",
 				 "4319 Woodland Park Ave N":"https://www.google.com/maps/@47.660205,-122.344898,14z",
 				 "1761 NW 59th St":"https://www.google.com/maps/@47.671407,-122.381555,14z",
 				 "410 12th Ave E":"https://www.google.com/maps/@47.622331,-122.316446,14z",
@@ -501,7 +498,6 @@ wp_enqueue_script('google-maps-api');
 				 "6052 38th Avenue SW Seattle WA":"https://www.google.com/maps/@47.54687,-122.380075,14z",
 				 "216 26th Avenue E Seattle WA":"https://www.google.com/maps/@47.620754,-122.298193,14z",
 				 "2347 Hughes Avenue SW Seattle WA":"https://www.google.com/maps/@47.5825539,-122.3995966,14z",
-				 "4039 8th Avenue NE Seattle WA":"https://www.google.com/maps/@47.656718,-122.320121,14z",
 				 "517 28th Avenue E Seattle WA":"https://www.google.com/maps/@47.6238459,-122.2965749,14z",
 				 "4322 SW Roxbury St Seattle WA":"https://www.google.com/maps/@47.517984,-122.3885694,14z",
 				 "2819 W Elmore Place Seattle WA":"https://www.google.com/maps/@47.6569859,-122.3937447,14z",
@@ -520,7 +516,6 @@ wp_enqueue_script('google-maps-api');
 				 "10204 SE 23rd St Bellevue WA":"https://www.google.com/maps/@47.590339,-122.204079,14z",
 				 "3828 33rd Avenue W Seattle WA":"https://www.google.com/maps/@47.655004,-122.399147,14z",
 				 "7642 79th Avenue SE Mercer Island WA":"https://www.google.com/maps/@47.5335279,-122.232797,14z",
-				 "1115 McGilvra Boulevard E Seattle WA":"https://www.google.com/maps/@47.6290843,-122.2817238,14z",
 				 "116 13th Avenue E Seattle WA":"https://www.google.com/maps/@47.619281,-122.315236,14z",
 				 "804 N 48th St Seattle WA":"https://www.google.com/maps/@47.663803,-122.348339,14z",
 				 "6115 1st Avenue NE Seattle WA":"https://www.google.com/maps/@47.6733331,-122.3284728,14z",
@@ -1607,7 +1602,6 @@ wp_enqueue_script('google-maps-api');
 				 "7555 25th Ave NE Seattle WA":"https://www.google.com/maps/@47.684669,-122.301133,14z",
 				 "518 NW Bright Street Seattle WA":"https://www.google.com/maps/@47.660252,-122.363694,14z",
 				 "519 NW 44th St Seattle WA":"https://www.google.com/maps/@47.6603137,-122.3636452,14z",
-				 "1634 S Lane St Seattle":"https://www.google.com/maps/@47.596889,-122.310039,14z",
 				 "5546 15th Ave S Seattle WA":"https://www.google.com/maps/@47.5520484,-122.3135059,14z",
 				 "1727 NW 60th St Seattle WA":"https://www.google.com/maps/@47.6722005,-122.380142,14z",
 				 "22612 Meridian Ave S. Bothell WA":"https://www.google.com/maps/@47.792948,-122.233454,14z",
@@ -1839,7 +1833,13 @@ wp_enqueue_script('google-maps-api');
 				 "3817 Gilman Ave W Rowhouses; featured; 3817-gilman-ave-w-rowhouses/":"https://www.google.com/maps/@47.6544949,-122.3875689,14z/",
 				 "3918 1st Avenue NE Seattle WA; featured; 3918-1st-ave-ne/":"https://www.google.com/maps/@47.6543275,-122.3276322,14z",
 				 "Kirkland 12; featured; kirkland-12/":"https://www.google.com/maps/@47.678319,-122.2072741,14z/",
-				 "Noren Pinehurst; featured; noren-pinehurst/":"https://www.google.com/maps//@47.7097854,-122.320071,14z/"
+				 "Noren Pinehurst; featured; noren-pinehurst/":"https://www.google.com/maps//@47.7097854,-122.320071,14z/",
+ 				 "1115 McGilvra Boulevard E Seattle WA; featured; 1115-mcgilvra-blvd-e/":"https://www.google.com/maps/@47.6290843,-122.2817238,14z",
+				 "1634 S Lane St Seattle; featured; 1634-south-lane-street/":"https://www.google.com/maps/@47.596889,-122.310039,14z",
+ 				 "2429 8th Ave N; featured; 2429-8th-ave-n/":"https://www.google.com/maps/@47.6404415,-122.3433941,14z",
+ 				 "2847 Franklin Ave E; featured; 2847-franklin-ave-e/":"https://www.google.com/maps/@47.6469364,-122.3238151,14z",
+ 				 "4039 8th Avenue NE Seattle WA; featured; academia-court-2/":"https://www.google.com/maps/@47.656718,-122.320121,14z",
+ 				 "531 Howe St; featured; queen-anne-rowhouses/":"https://www.google.com/maps/@47.635481,-122.346184,14z"
 			 }'></div>
 
 			<div class="hero__overflow"></div>

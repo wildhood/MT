@@ -26,6 +26,46 @@ header#post-426-title {
     box-shadow: inset 0px 250px 2500px rgba(255, 255, 255, 0.8);
 }
 
+/*make the menu more visible on the map page*/
+/*header#post-1152-title {
+    box-shadow: inset -30px 130px 130px -30px rgba(255, 255, 255, 0.8);
+}*/
+
+/* modify the background of the navigation for the project map page */
+
+@media screen and (min-width:800px) {
+
+body.page-id-1152  div.navigation.clearfix {
+    background-color: rgba(255, 255, 255, 0.91);
+    height: 31px;
+    width: 490px;
+    border-radius: 10px;
+    padding: 6px;
+  }
+  body.page-id-1152   .header.header--inverse-important div.navigation.clearfix {
+    background: none;
+  }
+}
+
+@media screen and (max-width:799px) {
+
+  .item--is-adopted {
+    display:none;
+  }
+
+  body.page-id-1152  div.navigation.clearfix {
+      background-color: rgb(255, 255, 255);
+      height: 31px;
+      width: 39px;
+      border-radius: 6px;
+      padding: 6px;
+    }
+    body.page-id-1152   .header.header--inverse-important div.navigation.clearfix {
+      background: none;
+      }
+}
+
+
 /*modify main menu appearance */
 
  div.navigation .menu--horizontal,
@@ -91,10 +131,19 @@ div.gmap__marker--all-proj__featured div.gmap__marker__btn a:hover {
   clear: both;
 }
 
+a.project--link-dark {
+  color:#afafaf;
+}
+
+a:hover.project--link-dark {
+  color:#000;
+}
+
+
 /*profile page specific*/
 
 .profile--staff-names {
-  margin: -1.6rem 0 1rem 0;
+  margin: -1.6rem 0 0 0;
   padding: 0 0 0 0;
   font-family: lato, sans-serif;
   text-transform: uppercase;
@@ -103,13 +152,54 @@ div.gmap__marker--all-proj__featured div.gmap__marker__btn a:hover {
   letter-spacing: .09rem;
 }
 
-.profile--staff-info {
+/* .profile--staff-info {
   line-height: .6rem;
+} */
+
+.profile--headshots-associates {
+  height: 240px;
+}
+
+.profile--associates-text-block {
+  margin: 4rem auto;
+  width: 212px;
 }
 
 .profile--headshots {
   height: 170px;
 }
+
+.profile--no-headshot {
+  margin-top: 80px;
+}
+
+.profile--spacer {
+  height: 4rem;
+}
+
+@media screen and (max-width:799px) {
+
+  .profile--headshots-associates {
+    height: 240px;
+  }
+
+  .pixcode--grid  {
+    text-align: center;
+  }
+  .profile--headshots {
+    margin: 0rem auto -1rem;
+    height: 240px;
+    width:  212px;
+  }
+  .profile--staff-names {
+    margin: 0 auto;
+  }
+}
+
+#contact-us--captcha {
+  margin-top: 1rem;
+}
+
 
 /* @media not screen and (min-width: 800px) {
 	.profile--headshots {

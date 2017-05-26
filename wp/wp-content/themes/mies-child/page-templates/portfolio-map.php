@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Portfolio Archive
+ * Template Name: Portfolio Map
  *
  * @package Mies
  * @since   Mies 1.0
@@ -20,19 +20,7 @@ if ( post_password_required() && ! $wpgrade_private_post['allowed'] ) {
 
 } else {
 
-	while ( have_posts() ) : the_post();
-
-		get_template_part( 'templates/hero' );
-
-		get_template_part( 'templates/page/portfolio-archive-content' );
-
-		get_template_part( 'templates/subpages' );
-
-		if ( get_post_meta( get_the_ID(), wpgrade::prefix() . 'page_enabled_social_share', true ) ) {
-			get_template_part( 'templates/core/addthis-social-popup' );
-		}
-
-	endwhile;
+get_template_part ( 'templates/mt-map' );
 
 } // close if password protection
 
