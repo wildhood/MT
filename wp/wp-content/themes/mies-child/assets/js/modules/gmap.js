@@ -138,6 +138,7 @@ var gmapInit = function ($element) {
 						panControlOptions: {
 							position: google.maps.ControlPosition.LEFT_CENTER
 						},
+						// gestureHandling: greedy,
 						zoomControl: true,
 						zoomControlOptions: {
 							style: google.maps.ZoomControlStyle.LARGE,

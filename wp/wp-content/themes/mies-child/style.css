@@ -20,6 +20,16 @@ In that case please remember that you still need to retain the header above (rep
 specifically the 'Template: hive' line. */
 
 
+/*
+@media all and (max-width: 900px) {}
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {}
+@media screen and (max-width: 782px) {}
+@media not screen and (max-width: 75em) {}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {}
+@media not screen and (min-width: 321px) {}
+*/
+
+
 /*make the menu more visible on the contact page*/
 
 header#post-426-title {
@@ -49,6 +59,10 @@ body.page-id-1152  div.navigation.clearfix {
 
 @media screen and (max-width:799px) {
 
+  .site-logo--image img {
+    max-height: 50px !important;
+  }
+
   .item--is-adopted {
     display:none;
   }
@@ -60,11 +74,23 @@ body.page-id-1152  div.navigation.clearfix {
       border-radius: 6px;
       padding: 6px;
     }
+
     body.page-id-1152   .header.header--inverse-important div.navigation.clearfix {
       background: none;
       }
 }
 
+@media screen and (max-width:640px) {
+  .site-logo--image img {
+    max-height: 30px !important;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .site-logo--image img {
+    max-height: 26px !important;
+  }
+}
 
 /*modify main menu appearance */
 
@@ -94,6 +120,37 @@ body.page-id-118 div.hero__description {
 /*color: red;
 background-color: black;*/
 }
+
+/*modify the arrow down on all project hero*/
+.hero--shadowed .svg-arrow path, .hero--dark .svg-arrow path {
+    fill: white;
+}
+/*end modify down arrow on all project heros*/
+
+/*modify front page text*/
+body.page-id-118 .narrow, blockquote {
+    max-width: 43em;
+}
+
+body.page-id-118 blockquote, .intro {
+    font-size: 20px;
+    font-size: 1.2rem;
+}
+
+body.page-id-118 .hero__caption {
+    color: white;
+}
+
+/*modify front page text on mobile devices*/
+@media screen and (max-width:640px) {
+
+  body.page-id-118 blockquote, .intro {
+      font-size: 15px;
+      font-size: 1rem;
+  }
+}
+
+/*end modify front page text*/
 
 /*modify map on portfolio archive*/
 
@@ -177,6 +234,8 @@ a:hover.project--link-dark {
   height: 4rem;
 }
 
+/*center headshots on mobile devices*/
+
 @media screen and (max-width:799px) {
 
   .profile--headshots-associates {
@@ -195,6 +254,8 @@ a:hover.project--link-dark {
     margin: 0 auto;
   }
 }
+
+/*the captcha on the contact us page needs a margin at top */
 
 #contact-us--captcha {
   margin-top: 1rem;
